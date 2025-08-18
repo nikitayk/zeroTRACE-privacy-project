@@ -1,4 +1,4 @@
-import { MessageSquare, Search, Code, Eye, Plus, Settings, Target, Zap, Users, TrendingUp } from 'lucide-react';
+import { MessageSquare, Search, Code, Eye, Plus, Settings, Target, Zap, Users, TrendingUp, Trophy } from 'lucide-react';
 import type { AppMode } from '../types';
 
 interface SidebarProps {
@@ -16,6 +16,7 @@ const modeIcons = {
   competitive: Zap,
   interview: Users,
   optimization: TrendingUp,
+  gamification: Trophy,
 };
 
 const modeLabels = {
@@ -27,21 +28,22 @@ const modeLabels = {
   competitive: 'Competitive',
   interview: 'Interview',
   optimization: 'Optimize',
+  gamification: 'Gamification',
 };
 
 export function Sidebar({ mode, onModeChange, onNewChat }: SidebarProps) {
   return (
-    <div className="w-16 bg-gray-900/60 border-l border-gray-800/60 flex flex-col items-center py-2">
+    <div className="w-16 bg-[#1A1A1A] border-l border-[#2E2E2E] flex flex-col items-center py-2">
       {/* New Chat */}
       <button
         onClick={onNewChat}
-        className="w-8 h-8 rounded-md bg-gray-800/60 border border-gray-700/40 flex items-center justify-center text-gray-200 hover:text-green-400 hover:border-green-400/40 hover:bg-gray-700/60 transition-all duration-200 group"
+        className="w-8 h-8 rounded-md bg-[#1A1A1A] border border-[#2E2E2E] flex items-center justify-center text-[#FFFFFF] hover:text-[#9A4DFF] hover:border-[#9A4DFF] hover:bg-[#2B0F45] transition-colors duration-200 group"
         title="New Chat"
       >
         <Plus size={16} />
       </button>
 
-      <div className="h-px w-8 bg-gray-700/50 my-2" />
+      <div className="h-px w-8 bg-[#2E2E2E] my-2" />
 
       {/* Mode Buttons */}
       <div className="w-full flex flex-col items-center gap-1">
@@ -53,10 +55,10 @@ export function Sidebar({ mode, onModeChange, onNewChat }: SidebarProps) {
             <button
               key={modeKey}
               onClick={() => onModeChange(modeKey)}
-              className={`w-8 h-8 rounded-md border flex items-center justify-center transition-all duration-200 group ${
+              className={`w-8 h-8 rounded-md border flex items-center justify-center transition-colors duration-200 group ${
                 isActive
-                  ? 'bg-green-500/20 border-green-400/50 text-green-400 shadow-sm shadow-green-500/10'
-                  : 'bg-gray-800/60 border-gray-700/40 text-gray-200 hover:text-green-400 hover:border-green-400/40 hover:bg-gray-700/60'
+                  ? 'bg-[#2B0F45] border-[#9A4DFF] text-[#9A4DFF]'
+                  : 'bg-[#1A1A1A] border-[#2E2E2E] text-[#FFFFFF] hover:text-[#9A4DFF] hover:border-[#9A4DFF] hover:bg-[#2B0F45]'
               }`}
               title={modeLabels[modeKey]}
             >
@@ -68,7 +70,7 @@ export function Sidebar({ mode, onModeChange, onNewChat }: SidebarProps) {
 
       {/* Settings */}
       <button
-        className="w-8 h-8 mt-2 rounded-md bg-gray-800/60 border border-gray-700/40 flex items-center justify-center text-gray-200 hover:text-green-400 hover:border-green-400/40 hover:bg-gray-700/60 transition-all duration-200 group"
+        className="w-8 h-8 mt-2 rounded-md bg-[#1A1A1A] border border-[#2E2E2E] flex items-center justify-center text-[#FFFFFF] hover:text-[#9A4DFF] hover:border-[#9A4DFF] hover:bg-[#2B0F45] transition-colors duration-200 group"
         title="Settings"
       >
         <Settings size={14} />

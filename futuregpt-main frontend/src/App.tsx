@@ -5,6 +5,7 @@ import { WelcomeScreen } from './components/WelcomeScreen';
 import { MessageList } from './components/MessageList';
 import { ChatInput } from './components/ChatInput';
 import { DSASolver } from './components/DSASolver';
+import { Gamification } from './components/Gamification';
 import { useStorage } from './hooks/useStorage';
 import { useAI } from './hooks/useAI';
 import type { Message, AppMode, AIConfig, Context, DSAProblem } from './types';
@@ -127,6 +128,12 @@ function App() {
     return newMessage;
   }, []);
 
+  const publishActivity = useCallback((type: string, payload?: any) => {
+    try {
+      window.dispatchEvent(new CustomEvent('zt-activity', { detail: { type, payload, ts: Date.now() } }));
+    } catch {}
+  }, []);
+
   const handleSend = useCallback(async () => {
     if (!input.trim() || isLoading) return;
 
@@ -161,6 +168,7 @@ function App() {
           metadata: { model: 'web-search', source: 'search' },
         });
         setCredits(Math.max(0, credits - 2));
+        publishActivity('web_search', { query: input.trim() });
       } catch (error) {
         addMessage({
           role: 'assistant',
@@ -182,6 +190,7 @@ function App() {
     });
 
     setInput('');
+    publishActivity('message_sent', { contentLength: input.length });
 
     try {
       // Create assistant message for streaming
@@ -214,6 +223,7 @@ function App() {
 
       // Deduct credits
       setCredits(Math.max(0, credits - 1));
+      publishActivity('assistant_response', { length: assistantContent.length || 0 });
     } catch (error) {
       console.error('Error sending message:', error);
       addMessage({
@@ -245,6 +255,7 @@ function App() {
 
       // Deduct credits for web search
       setCredits(Math.max(0, credits - 2));
+      publishActivity('web_search', { query });
     } catch (error) {
       console.error('Error performing web search:', error);
       addMessage({
@@ -276,6 +287,7 @@ function App() {
 
       // Deduct credits for function calls
       setCredits(Math.max(0, credits - 1));
+      publishActivity('function_call', { functionName });
     } catch (error) {
       console.error('Error calling function:', error);
       addMessage({
@@ -310,6 +322,7 @@ function App() {
 
       // Deduct more credits for image generation
       setCredits(Math.max(0, credits - 5));
+      publishActivity('image_generated');
     } catch (error) {
       console.error('Error generating image:', error);
       addMessage({
@@ -359,13 +372,14 @@ function App() {
 
       // Deduct credits for DSA solving
       setCredits(Math.max(0, credits - 3));
+      publishActivity('dsa_solved', { language });
       
       return solution;
     } catch (error) {
       console.error('Error solving DSA problem:', error);
       throw error;
     }
-  }, [solveDSAProblem, addMessage, setCredits, credits]);
+  }, [solveDSAProblem, addMessage, setCredits, credits, publishActivity]);
 
   const handleAnalyzeComplexity = useCallback(async (code: string, language: string) => {
     try {
@@ -384,13 +398,14 @@ function App() {
 
       // Deduct credits for complexity analysis
       setCredits(Math.max(0, credits - 1));
+      publishActivity('complexity_analyzed', { language });
       
       return analysis;
     } catch (error) {
       console.error('Error analyzing complexity:', error);
       throw error;
     }
-  }, [analyzeComplexity, addMessage, setCredits, credits]);
+  }, [analyzeComplexity, addMessage, setCredits, credits, publishActivity]);
 
   const handleGenerateTestCases = useCallback(async (description: string, count: number) => {
     try {
@@ -410,13 +425,14 @@ function App() {
 
       // Deduct credits for test case generation
       setCredits(Math.max(0, credits - 1));
+      publishActivity('testcases_generated', { count });
       
       return testCases;
     } catch (error) {
       console.error('Error generating test cases:', error);
       throw error;
     }
-  }, [generateTestCases, addMessage, setCredits, credits]);
+  }, [generateTestCases, addMessage, setCredits, credits, publishActivity]);
 
   const handleNewChat = useCallback(() => {
     setMessages([]);
@@ -446,6 +462,12 @@ function App() {
           onPullContext={refreshContext}
           onCaptureActiveImage={captureActiveImage}
         />
+      );
+    }
+
+    if (mode === 'gamification') {
+      return (
+        <Gamification />
       );
     }
 
@@ -482,7 +504,7 @@ function App() {
   };
 
   return (
-    <div className="w-full h-[100vh] bg-gray-950 text-white flex flex-col border border-gray-800/50 shadow-2xl overflow-hidden">
+    <div className="w-full h-[100vh] bg-[#0D0D0D] text-white flex flex-col border border-[#2E2E2E] shadow-2xl overflow-hidden">
       {/* Header */}
       <Header mode={mode} model={selectedModel} credits={credits} />
       

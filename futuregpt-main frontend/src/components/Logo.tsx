@@ -20,12 +20,12 @@ export function Logo({ size = 'md', showText = true }: LogoProps) {
 
   return (
     <div className="flex items-center gap-1.5">
-      <div className={`${sizeClasses[size]} rounded-md bg-gray-900 border border-gray-700/60 flex items-center justify-center`}> 
-        <span className="text-green-400 font-semibold text-[10px]">ZT</span>
+      <div className={`${sizeClasses[size]} rounded-md bg-[#1A1A1A] border border-[#2E2E2E] flex items-center justify-center`}>
+        <span className="text-[#9A4DFF] font-semibold text-[10px]">ZT</span>
       </div>
       {showText && (
-        <span className={`${textSizeClasses[size]} font-semibold text-white/90`}>
-          zeroTrace
+        <span className={`${textSizeClasses[size]} font-semibold text-white`}>
+          Zero Trace
         </span>
       )}
     </div>

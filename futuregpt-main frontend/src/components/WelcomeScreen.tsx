@@ -102,27 +102,27 @@ export function WelcomeScreen({ mode, hasApiKey }: WelcomeScreenProps) {
   ]).filter(Boolean).slice(0, 2);
 
   return (
-    <div className="flex-1 flex flex-col items-center justify-start p-3 text-center gap-3">
+    <div className="flex-1 flex flex-col items-center justify-start p-3 text-center gap-3 bg-[#0D0D0D]">
       {/* Logo and Title */}
       <div className="mb-2">
-        <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl flex items-center justify-center mb-2 mx-auto">
+        <div className="w-10 h-10 bg-[#2B0F45] rounded-2xl flex items-center justify-center mb-2 mx-auto border border-[#9A4DFF]">
           {isCompetitiveMode ? (
-            <Target size={20} className="text-white" />
+            <Target size={20} className="text-[#9A4DFF]" />
           ) : (
-            <MessageCircle size={20} className="text-white" />
+            <MessageCircle size={20} className="text-[#9A4DFF]" />
           )}
         </div>
         <h1 className="text-lg font-bold text-white mb-1">
           {isCompetitiveMode ? 'Ultimate DSA Solver' : 'zeroTrace AI'}
         </h1>
-        <p className="text-gray-400 text-xs">
+        <p className="text-[#B3B3B3] text-xs">
           {isCompetitiveMode ? 'World\'s Best Competitive Programming AI' : 'Privacy-First AI Assistant'}
         </p>
       </div>
       
       {/* Mode Description */}
       <div className="mb-2">
-        <div className="inline-flex items-center gap-2 px-2 py-0.5 bg-gray-800/50 rounded-full text-xs text-gray-300 mb-2">
+        <div className="inline-flex items-center gap-2 px-2 py-0.5 bg-[#1A1A1A] border border-[#2E2E2E] rounded-full text-xs text-[#B3B3B3] mb-2">
           {mode === 'chat' && <MessageCircle size={14} />}
           {mode === 'research' && <Search size={14} />}
           {mode === 'code' && <Code size={14} />}
@@ -133,7 +133,7 @@ export function WelcomeScreen({ mode, hasApiKey }: WelcomeScreenProps) {
           {mode === 'optimization' && <TrendingUp size={14} />}
           <span className="capitalize">{mode.replace('-', ' ')} Mode</span>
         </div>
-        <p className="text-gray-400 text-xs max-w-xs">
+        <p className="text-[#B3B3B3] text-xs max-w-xs">
           {modeDescriptions[mode]}
         </p>
       </div>
@@ -143,11 +143,11 @@ export function WelcomeScreen({ mode, hasApiKey }: WelcomeScreenProps) {
         {currentFeatures.map((feature, index) => (
           <div
             key={index}
-            className="p-2 bg-gray-800/30 rounded-lg border border-gray-700/50"
+            className="p-2 bg-[#1A1A1A] rounded-lg border border-[#2E2E2E]"
           >
-            <feature.icon size={14} className="text-green-400 mb-1 mx-auto" />
+            <feature.icon size={14} className="text-[#9A4DFF] mb-1 mx-auto" />
             <h3 className="text-[11px] font-medium text-white mb-0.5">{feature.title}</h3>
-            <p className="text-[10px] text-gray-400 leading-tight">{feature.description}</p>
+            <p className="text-[10px] text-[#B3B3B3] leading-tight">{feature.description}</p>
           </div>
         ))}
       </div>

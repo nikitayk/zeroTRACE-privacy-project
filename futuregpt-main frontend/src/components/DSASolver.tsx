@@ -112,9 +112,9 @@ export function DSASolver({ onSolve, onAnalyzeComplexity, onGenerateTestCases, o
   };
 
   return (
-    <div className="space-y-6 p-4">
+    <div className="space-y-6 p-4 bg-[#0D0D0D]">
       {/* Header */}
-      <div className="flex items-center space-x-2 text-blue-400">
+      <div className="flex items-center space-x-2 text-[#9A4DFF]">
         <Target className="w-5 h-5" />
         <h2 className="text-lg font-semibold">DSA Problem Solver</h2>
       </div>
@@ -122,10 +122,10 @@ export function DSASolver({ onSolve, onAnalyzeComplexity, onGenerateTestCases, o
       {/* Single Problem Box */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <label className="text-sm font-medium text-gray-300">Problem (paste everything here)</label>
+          <label className="text-sm font-medium text-[#B3B3B3]">Problem (paste everything here)</label>
           <button
             onClick={pullFromActiveTab}
-            className="px-2 py-1 text-xs bg-blue-600 hover:bg-blue-700 rounded text-white"
+            className="px-2 py-1 text-xs bg-[#6A0DAD] hover:bg-[#2B0F45] rounded text-white border border-[#9A4DFF]"
             disabled={isLoading}
           >
             Use Active Tab
@@ -168,7 +168,7 @@ export function DSASolver({ onSolve, onAnalyzeComplexity, onGenerateTestCases, o
                 setIsProcessingImage(false);
               }
             }}
-            className="px-2 py-1 text-xs bg-gray-700 hover:bg-gray-600 rounded text-white"
+            className="px-2 py-1 text-xs bg-[#1A1A1A] hover:bg-[#2B0F45] border border-[#2E2E2E] rounded text-white"
             disabled={isLoading || isProcessingImage}
           >
             Use Active Image & Solve
@@ -179,18 +179,18 @@ export function DSASolver({ onSolve, onAnalyzeComplexity, onGenerateTestCases, o
           onChange={(e) => setProblemText(e.target.value)}
           placeholder={"Paste the full DSA problem, including constraints, input/output, samples, etc."}
           rows={8}
-          className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 bg-[#1A1A1A] border border-[#2E2E2E] rounded-md text-white placeholder-[#B3B3B3] focus:outline-none focus:ring-2 focus:ring-[#6A0DAD]"
         />
 
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-[#B3B3B3] mb-2">
               Difficulty
             </label>
             <select
               value={difficulty}
               onChange={(e) => setDifficulty(e.target.value as any)}
-              className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 bg-[#1A1A1A] border border-[#2E2E2E] rounded-md text-white focus:outline-none focus:ring-2 focus:ring-[#6A0DAD]"
             >
               <option value="easy">Easy</option>
               <option value="medium">Medium</option>
@@ -200,13 +200,13 @@ export function DSASolver({ onSolve, onAnalyzeComplexity, onGenerateTestCases, o
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-[#B3B3B3] mb-2">
               Language
             </label>
             <select
               value={selectedLanguage}
               onChange={(e) => setSelectedLanguage(e.target.value)}
-              className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 bg-[#1A1A1A] border border-[#2E2E2E] rounded-md text-white focus:outline-none focus:ring-2 focus:ring-[#6A0D0D]"
             >
               {PROGRAMMING_LANGUAGES.map(lang => (
                 <option key={lang.name} value={lang.syntax}>
@@ -223,7 +223,7 @@ export function DSASolver({ onSolve, onAnalyzeComplexity, onGenerateTestCases, o
         <button
           onClick={handleSolve}
           disabled={isLoading || !problemText.trim()}
-          className="flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 disabled:cursor-not-allowed rounded-md text-white font-medium transition-colors"
+          className="flex items-center space-x-2 px-4 py-2 bg-[#6A0DAD] hover:bg-[#2B0F45] disabled:bg-[#1A1A1A] disabled:border disabled:border-[#2E2E2E] disabled:cursor-not-allowed rounded-md text-white font-medium transition-colors"
         >
           <Zap className="w-4 h-4" />
           <span>Solve Problem</span>
@@ -232,7 +232,7 @@ export function DSASolver({ onSolve, onAnalyzeComplexity, onGenerateTestCases, o
         <button
           onClick={handleGenerateTestCases}
           disabled={isLoading || !problemText.trim()}
-          className="flex items-center space-x-2 px-4 py-2 bg-green-600 hover:bg-green-700 disabled:bg-gray-600 disabled:cursor-not-allowed rounded-md text-white font-medium transition-colors"
+          className="flex items-center space-x-2 px-4 py-2 bg-[#9A4DFF] hover:bg-[#2B0F45] disabled:bg-[#1A1A1A] disabled:border disabled:border-[#2E2E2E] disabled:cursor-not-allowed rounded-md text-white font-medium transition-colors"
         >
           <Play className="w-4 h-4" />
           <span>Generate Tests</span>
@@ -242,26 +242,26 @@ export function DSASolver({ onSolve, onAnalyzeComplexity, onGenerateTestCases, o
       {/* Test Cases */}
       {testCases.length > 0 && (
         <div className="space-y-3">
-          <h3 className="text-md font-semibold text-gray-300 flex items-center space-x-2">
+          <h3 className="text-md font-semibold text-[#B3B3B3] flex items-center space-x-2">
             <FileText className="w-4 h-4" />
             <span>Test Cases</span>
           </h3>
           <div className="space-y-2">
             {testCases.map((testCase, index) => (
-              <div key={index} className="p-3 bg-gray-800 rounded-md border border-gray-700">
-                <div className="text-sm text-gray-400 mb-1">Test Case {index + 1}</div>
+              <div key={index} className="p-3 bg-[#1A1A1A] rounded-md border border-[#2E2E2E]">
+                <div className="text-sm text-[#B3B3B3] mb-1">Test Case {index + 1}</div>
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div>
-                    <span className="text-green-400">Input:</span>
-                    <div className="font-mono bg-gray-900 p-2 rounded mt-1">{testCase.input}</div>
+                    <span className="text-[#9A4DFF]">Input:</span>
+                    <div className="font-mono bg-[#0D0D0D] p-2 rounded mt-1 border border-[#2E2E2E]">{testCase.input}</div>
                   </div>
                   <div>
-                    <span className="text-blue-400">Output:</span>
-                    <div className="font-mono bg-gray-900 p-2 rounded mt-1">{testCase.output}</div>
+                    <span className="text-[#9A4DFF]">Output:</span>
+                    <div className="font-mono bg-[#0D0D0D] p-2 rounded mt-1 border border-[#2E2E2E]">{testCase.output}</div>
                   </div>
                 </div>
                 {testCase.description && (
-                  <div className="text-xs text-gray-500 mt-2">{testCase.description}</div>
+                  <div className="text-xs text-[#B3B3B3] mt-2">{testCase.description}</div>
                 )}
               </div>
             ))}
@@ -272,40 +272,38 @@ export function DSASolver({ onSolve, onAnalyzeComplexity, onGenerateTestCases, o
       {/* Solution */}
       {solution && (
         <div className="space-y-4">
-          <h3 className="text-md font-semibold text-gray-300 flex items-center space-x-2">
+          <h3 className="text-md font-semibold text-[#B3B3B3] flex items-center space-x-2">
             <Code className="w-4 h-4" />
             <span>Solution</span>
             {(solution as any)?.metadata && (
-              <span className="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">
-                Phase {(solution as any).metadata.finalPhase}
-              </span>
+              <span className="text-xs bg-[#2B0F45] text-[#9A4DFF] border border-[#9A4DFF] px-2 py-1 rounded">Phase {(solution as any).metadata.finalPhase}</span>
             )}
           </h3>
           
           {/* Pipeline Information */}
           {(solution as any)?.metadata && (
-            <div className="bg-gray-900 rounded-md p-4 border border-green-500/20">
-              <h4 className="text-sm font-semibold text-green-400 mb-2">Sequential AI Pipeline Results</h4>
+            <div className="bg-[#0D0D0D] rounded-md p-4 border border-[#2E2E2E]">
+              <h4 className="text-sm font-semibold text-[#9A4DFF] mb-2">Sequential AI Pipeline Results</h4>
               <div className="grid grid-cols-2 gap-4 text-xs">
                 <div>
-                  <span className="text-gray-400">Final Phase:</span>
-                  <div className="text-green-400 font-medium">{(solution as any).metadata.finalPhase}/5</div>
+                  <span className="text-[#B3B3B3]">Final Phase:</span>
+                  <div className="text-[#9A4DFF] font-medium">{(solution as any).metadata.finalPhase}/5</div>
                 </div>
                 <div>
-                  <span className="text-gray-400">Execution Time:</span>
-                  <div className="text-blue-400 font-medium">{(solution as any).metadata.totalExecutionTime}ms</div>
+                  <span className="text-[#B3B3B3]">Execution Time:</span>
+                  <div className="text-[#9A4DFF] font-medium">{(solution as any).metadata.totalExecutionTime}ms</div>
                 </div>
                 <div>
-                  <span className="text-gray-400">Total Attempts:</span>
-                  <div className="text-yellow-400 font-medium">{(solution as any).metadata.totalAttempts}</div>
+                  <span className="text-[#B3B3B3]">Total Attempts:</span>
+                  <div className="text-[#9A4DFF] font-medium">{(solution as any).metadata.totalAttempts}</div>
                 </div>
                 <div>
-                  <span className="text-gray-400">Success Rate:</span>
-                  <div className="text-purple-400 font-medium">{(solution as any)?.testResults?.successRate || 0}%</div>
+                  <span className="text-[#B3B3B3]">Success Rate:</span>
+                  <div className="text-[#9A4DFF] font-medium">{(solution as any)?.testResults?.successRate || 0}%</div>
                 </div>
               </div>
               {(solution as any).metadata.phaseDetails && (
-                <div className="mt-3 text-xs text-gray-400">
+                <div className="mt-3 text-xs text-[#B3B3B3]">
                   <div><strong>Models Used:</strong> {(solution as any).metadata.phaseDetails.models.join(' → ')}</div>
                   <div><strong>Logic:</strong> {(solution as any).metadata.phaseDetails.logic}</div>
                 </div>
@@ -313,13 +311,13 @@ export function DSASolver({ onSolve, onAnalyzeComplexity, onGenerateTestCases, o
             </div>
           )}
           
-          <div className="bg-gray-900 rounded-md p-4">
+          <div className="bg-[#0D0D0D] rounded-md p-4 border border-[#2E2E2E]">
             <div className="flex items-center justify-between mb-3">
               <span className="text-sm text-gray-400">{solution.language.toUpperCase()}</span>
               <button
                 onClick={handleAnalyzeComplexity}
                 disabled={isLoading}
-                className="flex items-center space-x-1 px-2 py-1 bg-purple-600 hover:bg-purple-700 rounded text-xs text-white"
+                className="flex items-center space-x-1 px-2 py-1 bg-[#6A0DAD] hover:bg-[#2B0F45] border border-[#9A4DFF] rounded text-xs text-white"
               >
                 <Clock className="w-3 h-3" />
                 <span>Analyze</span>
@@ -333,24 +331,24 @@ export function DSASolver({ onSolve, onAnalyzeComplexity, onGenerateTestCases, o
 
           {/* Complexity Analysis */}
           {complexityAnalysis && (
-            <div className="bg-gray-900 rounded-md p-4">
-              <h4 className="text-sm font-semibold text-gray-300 mb-3">Complexity Analysis</h4>
+            <div className="bg-[#0D0D0D] rounded-md p-4 border border-[#2E2E2E]">
+              <h4 className="text-sm font-semibold text-[#B3B3B3] mb-3">Complexity Analysis</h4>
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
-                  <span className="text-yellow-400">Time Complexity:</span>
-                  <div className="font-mono bg-gray-800 p-2 rounded mt-1">{complexityAnalysis.timeComplexity}</div>
+                  <span className="text-[#9A4DFF]">Time Complexity:</span>
+                  <div className="font-mono bg-[#1A1A1A] p-2 rounded mt-1 border border-[#2E2E2E]">{complexityAnalysis.timeComplexity}</div>
                 </div>
                 <div>
-                  <span className="text-green-400">Space Complexity:</span>
-                  <div className="font-mono bg-gray-800 p-2 rounded mt-1">{complexityAnalysis.spaceComplexity}</div>
+                  <span className="text-[#9A4DFF]">Space Complexity:</span>
+                  <div className="font-mono bg-[#1A1A1A] p-2 rounded mt-1 border border-[#2E2E2E]">{complexityAnalysis.spaceComplexity}</div>
                 </div>
               </div>
-              <div className="mt-3 text-sm text-gray-300">
+              <div className="mt-3 text-sm text-[#FFFFFF]">
                 <div className="font-semibold mb-1">Explanation:</div>
                 <div>{complexityAnalysis.explanation}</div>
               </div>
               {complexityAnalysis.optimization && (
-                <div className="mt-3 text-sm text-blue-300">
+                <div className="mt-3 text-sm text-[#B3B3B3]">
                   <div className="font-semibold mb-1">Optimization:</div>
                   <div>{complexityAnalysis.optimization}</div>
                 </div>
@@ -359,15 +357,15 @@ export function DSASolver({ onSolve, onAnalyzeComplexity, onGenerateTestCases, o
           )}
 
           {/* Approach and Explanation */}
-          <div className="bg-gray-900 rounded-md p-4">
-            <h4 className="text-sm font-semibold text-gray-300 mb-3">Approach & Explanation</h4>
-            <div className="space-y-3 text-sm text-gray-300">
+          <div className="bg-[#0D0D0D] rounded-md p-4 border border-[#2E2E2E]">
+            <h4 className="text-sm font-semibold text-[#B3B3B3] mb-3">Approach & Explanation</h4>
+            <div className="space-y-3 text-sm text-[#FFFFFF]">
               <div>
-                <span className="text-purple-400 font-semibold">Approach:</span>
+                <span className="text-[#9A4DFF] font-semibold">Approach:</span>
                 <div className="mt-1">{solution.approach}</div>
               </div>
               <div>
-                <span className="text-blue-400 font-semibold">Explanation:</span>
+                <span className="text-[#9A4DFF] font-semibold">Explanation:</span>
                 <div className="mt-1">{solution.explanation}</div>
               </div>
             </div>

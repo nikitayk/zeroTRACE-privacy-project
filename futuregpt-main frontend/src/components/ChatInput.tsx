@@ -148,25 +148,25 @@ export function ChatInput({
   const contextLength = (context?.webpageContent?.length || 0) + (context?.selectedText?.length || 0);
 
   return (
-    <div className="border-t border-gray-700/50 p-3 bg-gray-900/50 backdrop-blur-sm">
+    <div className="border-t border-[#2E2E2E] p-3 bg-[#0D0D0D] sticky bottom-0">
       {/* Context Display */}
       {hasContext && (
         <div className="mb-3">
           <div className="flex items-center gap-2 mb-2">
             <button
               onClick={() => setShowContext(!showContext)}
-              className="text-xs text-gray-400 hover:text-green-400 transition-colors flex items-center gap-1"
+              className="text-xs text-[#B3B3B3] hover:text-[#9A4DFF] transition-colors flex items-center gap-1"
             >
-              <RefreshCw size={12} className="text-green-400" />
+              <RefreshCw size={12} className="text-[#9A4DFF]" />
               {showContext ? 'Hide' : 'Show'} Context 
               ({context.webpageContent ? 'Page' : ''}{context.webpageContent && context.selectedText ? ' + ' : ''}{context.selectedText ? 'Selection' : ''})
             </button>
-            <span className="text-xs text-gray-500">
+            <span className="text-xs text-[#B3B3B3]">
               ({contextLength} chars)
             </span>
           </div>
           {showContext && (
-            <div className="mt-2 p-2 bg-gray-800/50 rounded text-xs text-gray-300 max-h-20 overflow-y-auto">
+            <div className="mt-2 p-2 bg-[#1A1A1A] border border-[#2E2E2E] rounded text-xs text-[#B3B3B3] max-h-20 overflow-y-auto">
               {context.selectedText && (
                 <div className="mb-1">
                   <strong>Selected:</strong> {context.selectedText.substring(0, 100)}...
@@ -187,14 +187,14 @@ export function ChatInput({
         <div className="relative">
           <button
             onClick={() => setShowModelSelect(!showModelSelect)}
-            className="flex items-center gap-2 px-3 py-1.5 bg-gray-800/50 border border-gray-600/30 rounded-lg text-sm text-gray-300 hover:bg-gray-700/50 transition-colors"
+            className="flex items-center gap-2 px-3 py-1.5 bg-[#1A1A1A] border border-[#2E2E2E] rounded-lg text-sm text-[#B3B3B3] hover:bg-[#2B0F45] hover:text-[#FFFFFF] hover:border-[#9A4DFF] transition-colors"
           >
             <span>{models.find(m => m.id === model)?.name}</span>
             <ChevronDown size={14} />
           </button>
           
           {showModelSelect && (
-            <div className="absolute bottom-full mb-2 left-0 bg-gray-800 border border-gray-600/50 rounded-lg shadow-xl z-10 min-w-48">
+            <div className="absolute bottom-full mb-2 left-0 bg-[#1A1A1A] border border-[#2E2E2E] rounded-lg shadow-xl z-10 min-w-48">
               {models.map((m) => (
                 <button
                   key={m.id}
@@ -202,14 +202,14 @@ export function ChatInput({
                     onModelChange(m.id);
                     setShowModelSelect(false);
                   }}
-                  className={`w-full text-left px-3 py-2 text-sm hover:bg-gray-700/50 first:rounded-t-lg last:rounded-b-lg transition-colors ${
-                    model === m.id ? 'text-green-400 bg-green-500/10' : 'text-gray-300'
+                  className={`w-full text-left px-3 py-2 text-sm hover:bg-[#2B0F45] first:rounded-t-lg last:rounded-b-lg transition-colors ${
+                    model === m.id ? 'text-[#9A4DFF] bg-[#2B0F45]' : 'text-[#B3B3B3]'
                   }`}
                 >
                   <div className="flex items-center justify-between">
                     <span>{m.name}</span>
                     {m.fast && (
-                      <span className="text-xs text-green-400 bg-green-500/20 px-1.5 py-0.5 rounded">
+                      <span className="text-xs text-[#9A4DFF] bg-[#2B0F45] px-1.5 py-0.5 rounded">
                         Fast
                       </span>
                     )}
@@ -222,13 +222,13 @@ export function ChatInput({
 
         {/* Web Access Toggle */}
         <div className="flex items-center gap-2">
-          <Globe size={14} className="text-gray-400" />
+          <Globe size={14} className="text-[#B3B3B3]" />
           <button
             onClick={onWebAccessToggle}
             className={`px-2 py-1 text-xs rounded border transition-colors ${
               webAccess
-                ? 'bg-green-500/20 border-green-400/30 text-green-400'
-                : 'bg-gray-800/50 border-gray-600/30 text-gray-400 hover:border-gray-500/50'
+                ? 'bg-[#2B0F45] border-[#9A4DFF] text-[#9A4DFF]'
+                : 'bg-[#1A1A1A] border-[#2E2E2E] text-[#B3B3B3] hover:border-[#9A4DFF] hover:bg-[#2B0F45]'
             }`}
           >
             {webAccess ? 'On' : 'Off'}
@@ -240,8 +240,8 @@ export function ChatInput({
       <div
         className={`relative rounded-lg border transition-colors ${
           dragOver
-            ? 'border-green-400/50 bg-green-500/5'
-            : 'border-gray-600/50 bg-gray-800/30'
+            ? 'border-[#9A4DFF] bg-[#2B0F45]'
+            : 'border-[#2E2E2E] bg-[#1A1A1A]'
         }`}
         onDrop={handleDrop}
         onDragOver={(e) => e.preventDefault()}
@@ -252,7 +252,7 @@ export function ChatInput({
           {/* File Upload */}
           <button
             onClick={() => fileInputRef.current?.click()}
-            className="p-2 text-gray-400 hover:text-green-400 hover:bg-green-500/10 rounded-lg transition-colors"
+            className="p-2 text-[#B3B3B3] hover:text-[#FFFFFF] hover:bg-[#2B0F45] rounded-lg transition-colors"
             title="Upload file"
           >
             <Upload size={16} />
@@ -264,7 +264,7 @@ export function ChatInput({
             onChange={(e) => setInput(e.target.value)}
             onKeyPress={handleKeyPress}
             placeholder={`Ask anything... (${mode} mode)`}
-            className="flex-1 bg-transparent text-white placeholder-gray-500 resize-none max-h-32 min-h-[24px] focus:outline-none"
+            className="flex-1 bg-transparent text-white placeholder-[#B3B3B3] resize-none max-h-32 min-h-[24px] focus:outline-none"
             rows={1}
             style={{
               height: 'auto',
@@ -285,7 +285,7 @@ export function ChatInput({
               <button
                 onClick={handleWebSearch}
                 disabled={!canSend}
-                className="p-2 text-gray-400 hover:text-blue-400 hover:bg-blue-500/10 rounded-lg transition-colors disabled:opacity-50 disabled:hover:text-gray-400 disabled:hover:bg-transparent"
+                className="p-2 text-[#B3B3B3] hover:text-[#9A4DFF] hover:bg-[#2B0F45] rounded-lg transition-colors disabled:opacity-50 disabled:hover:text-[#B3B3B3] disabled:hover:bg-transparent"
                 title="Web search"
               >
                 <Search size={16} />
@@ -296,7 +296,7 @@ export function ChatInput({
             <button
               onClick={handleFunctionCall}
               disabled={!canSend}
-              className="p-2 text-gray-400 hover:text-purple-400 hover:bg-purple-500/10 rounded-lg transition-colors disabled:opacity-50 disabled:hover:text-gray-400 disabled:hover:bg-transparent"
+              className="p-2 text-[#B3B3B3] hover:text-[#9A4DFF] hover:bg-[#2B0F45] rounded-lg transition-colors disabled:opacity-50 disabled:hover:text-[#B3B3B3] disabled:hover:bg-transparent"
               title="Function call"
             >
               <Zap size={16} />
@@ -306,7 +306,7 @@ export function ChatInput({
               <button
                 onClick={onGenerateImage}
                 disabled={!canSend}
-                className="p-2 text-gray-400 hover:text-green-400 hover:bg-green-500/10 rounded-lg transition-colors disabled:opacity-50 disabled:hover:text-gray-400 disabled:hover:bg-transparent"
+                className="p-2 text-[#B3B3B3] hover:text-[#FFFFFF] hover:bg-[#2B0F45] rounded-lg transition-colors disabled:opacity-50 disabled:hover:text-[#B3B3B3] disabled:hover:bg-transparent"
                 title="Generate image"
               >
                 <Image size={16} />
@@ -316,11 +316,11 @@ export function ChatInput({
             <button
               onClick={onSend}
               disabled={!canSend}
-              className="p-2 text-gray-400 hover:text-green-400 hover:bg-green-500/10 rounded-lg transition-colors disabled:opacity-50 disabled:hover:text-gray-400 disabled:hover:bg-transparent"
+              className="p-2 text-[#B3B3B3] hover:text-[#FFFFFF] hover:bg-[#2B0F45] rounded-lg transition-colors disabled:opacity-50 disabled:hover:text-[#B3B3B3] disabled:hover:bg-transparent"
               title="Send message"
             >
               {isLoading ? (
-                <div className="w-4 h-4 border-2 border-green-400 border-t-transparent rounded-full animate-spin" />
+                <div className="w-4 h-4 border-2 border-[#9A4DFF] border-t-transparent rounded-full animate-spin" />
               ) : (
                 <Send size={16} />
               )}
@@ -330,8 +330,8 @@ export function ChatInput({
 
         {/* Drag overlay */}
         {dragOver && (
-          <div className="absolute inset-0 bg-green-500/10 border-2 border-dashed border-green-400/50 rounded-lg flex items-center justify-center">
-            <p className="text-green-400 text-sm">Drop files here to upload</p>
+          <div className="absolute inset-0 bg-[#2B0F45] border-2 border-dashed border-[#9A4DFF] rounded-lg flex items-center justify-center">
+            <p className="text-[#9A4DFF] text-sm">Drop files here to upload</p>
           </div>
         )}
       </div>

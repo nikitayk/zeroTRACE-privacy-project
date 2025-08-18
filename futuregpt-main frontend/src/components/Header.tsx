@@ -17,6 +17,7 @@ const modeDescriptions = {
   competitive: 'Competitive Programming',
   interview: 'Interview Prep',
   optimization: 'Code Optimization',
+  gamification: 'Gamification',
 };
 
 export function Header({ mode, model, credits }: HeaderProps) {
@@ -41,21 +42,21 @@ export function Header({ mode, model, credits }: HeaderProps) {
   }, []);
 
   return (
-    <div className="h-12 bg-gray-950/80 border-b border-gray-800/50 px-3 flex items-center justify-between">
+    <div className="h-12 bg-[#0D0D0D] border-b border-[#2E2E2E] px-3 flex items-center justify-between">
       <div className="flex items-center gap-2">
         <Logo size="sm" />
         <div>
           <h1 className="text-xs font-medium text-white/90">{modeDescriptions[mode]}</h1>
-          <p className="text-[10px] text-gray-500">{model}</p>
+          <p className="text-[10px] text-[#B3B3B3]">{model}</p>
         </div>
       </div>
 
-      <div className="flex items-center gap-3 text-[10px] text-gray-400">
+      <div className="flex items-center gap-3 text-[10px] text-[#B3B3B3]">
         <div className="flex items-center gap-1">
-          <span className={`inline-block w-2 h-2 rounded-full ${backendOnline ? 'bg-green-400' : 'bg-gray-700'}`} />
+          <span className={`inline-block w-2 h-2 rounded-full ${backendOnline ? 'bg-[#9A4DFF]' : 'bg-[#2E2E2E]'}`} />
           <span className="hidden sm:inline">{backendOnline ? 'Backend Connected' : 'Backend Offline'}</span>
         </div>
-        <span className="text-green-400 font-medium">{credits}</span>
+        <span className="text-[#9A4DFF] font-medium">{credits}</span>
         <span>credits</span>
       </div>
     </div>

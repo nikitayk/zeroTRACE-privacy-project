@@ -190,30 +190,30 @@ export function FileUpload({
   const isPDF = (fileType: string) => fileType === 'application/pdf';
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 bg-[#0D0D0D]">
       {/* Upload Area */}
       <div
         className={`border-2 border-dashed rounded-lg p-6 text-center transition-colors ${
           dragActive 
-            ? 'border-blue-400 bg-blue-400/10' 
-            : 'border-gray-600 hover:border-gray-500'
+            ? 'border-[#9A4DFF] bg-[#2B0F45]' 
+            : 'border-[#2E2E2E] hover:border-[#9A4DFF]'
         }`}
         onDragEnter={handleDrag}
         onDragLeave={handleDrag}
         onDragOver={handleDrag}
         onDrop={handleDrop}
       >
-        <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2" />
-        <p className="text-sm text-gray-300 mb-2">
+        <Upload className="w-8 h-8 text-[#B3B3B3] mx-auto mb-2" />
+        <p className="text-sm text-[#FFFFFF] mb-2">
           Drag and drop files here, or{' '}
           <button
             onClick={() => fileInputRef.current?.click()}
-            className="text-blue-400 hover:text-blue-300 underline"
+            className="text-[#9A4DFF] hover:text-[#FFFFFF] underline"
           >
             browse
           </button>
         </p>
-        <p className="text-xs text-gray-500">
+        <p className="text-xs text-[#B3B3B3]">
           Supported: Images (PNG, JPG, GIF, WEBP, BMP, TIFF, SVG), Documents (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX), 
           Programming (JS, CPP, PY, JAVA, PHP, GO, RS, SWIFT, TS, HTML, CSS, SQL), 
           Adobe (PSD), Archives (ZIP, RAR, 7Z), Text (TXT, CSV, JSON, XML, YAML, MD) (Max {maxSize / (1024 * 1024)}MB)
@@ -231,19 +231,19 @@ export function FileUpload({
       {/* Uploaded Files */}
       {uploadedFiles.length > 0 && (
         <div className="space-y-3">
-          <h3 className="text-sm font-medium text-gray-300">Uploaded Files</h3>
+          <h3 className="text-sm font-medium text-[#B3B3B3]">Uploaded Files</h3>
           {uploadedFiles.map((file) => {
             const Icon = getFileIcon(file.type);
             const analysis = analysisResults.get(file.id);
             
             return (
-              <div key={file.id} className="bg-gray-800 rounded-lg p-4 border border-gray-700">
+              <div key={file.id} className="bg-[#1A1A1A] rounded-lg p-4 border border-[#2E2E2E]">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-3">
-                    <Icon className="w-5 h-5 text-blue-400" />
+                    <Icon className="w-5 h-5 text-[#9A4DFF]" />
                     <div>
                       <p className="text-sm font-medium text-white">{file.name}</p>
-                      <p className="text-xs text-gray-400">
+                      <p className="text-xs text-[#B3B3B3]">
                         {formatFileSize(file.size)} • {file.type}
                       </p>
                     </div>
@@ -251,12 +251,12 @@ export function FileUpload({
                   <div className="flex items-center gap-2">
                     {analysis && (
                       <div title="Analyzed">
-                        <CheckCircle className="w-4 h-4 text-green-400" />
+                        <CheckCircle className="w-4 h-4 text-[#9A4DFF]" />
                       </div>
                     )}
                     <button
                       onClick={() => removeFile(file.id)}
-                      className="text-gray-400 hover:text-red-400 transition-colors"
+                      className="text-[#B3B3B3] hover:text-white transition-colors"
                     >
                       <X className="w-4 h-4" />
                     </button>
@@ -269,7 +269,7 @@ export function FileUpload({
                     <img
                       src={URL.createObjectURL(new Blob([file.content]))}
                       alt={file.name}
-                      className="max-w-full h-32 object-contain rounded border border-gray-600"
+                      className="max-w-full h-32 object-contain rounded border border-[#2E2E2E]"
                     />
                   </div>
                 )}
@@ -278,27 +278,27 @@ export function FileUpload({
                 {analysis && (
                   <div className="space-y-3">
                     <div className="flex items-center gap-2 text-sm text-gray-300">
-                      <Eye className="w-4 h-4" />
-                      <span className="font-medium">AI Analysis Results</span>
+                      <Eye className="w-4 h-4 text-[#9A4DFF]" />
+                      <span className="font-medium text-white">AI Analysis Results</span>
                     </div>
                     
                     {/* Image Analysis */}
                     {'description' in analysis && (
                       <div className="space-y-2 text-sm">
                         <div>
-                          <span className="text-blue-400 font-medium">Description:</span>
-                          <p className="text-gray-300 mt-1">{analysis.description}</p>
+                          <span className="text-[#9A4DFF] font-medium">Description:</span>
+                          <p className="text-[#FFFFFF] mt-1">{analysis.description}</p>
                         </div>
                         {analysis.objects.length > 0 && (
                           <div>
-                            <span className="text-green-400 font-medium">Objects:</span>
-                            <p className="text-gray-300 mt-1">{analysis.objects.join(', ')}</p>
+                            <span className="text-[#9A4DFF] font-medium">Objects:</span>
+                            <p className="text-[#FFFFFF] mt-1">{analysis.objects.join(', ')}</p>
                           </div>
                         )}
                         {analysis.text.length > 0 && (
                           <div>
-                            <span className="text-yellow-400 font-medium">Extracted Text:</span>
-                            <p className="text-gray-300 mt-1">{analysis.text.join(' ')}</p>
+                            <span className="text-[#9A4DFF] font-medium">Extracted Text:</span>
+                            <p className="text-[#FFFFFF] mt-1">{analysis.text.join(' ')}</p>
                           </div>
                         )}
                       </div>
@@ -308,8 +308,8 @@ export function FileUpload({
                     {'extractedText' in analysis && (
                       <div className="space-y-2 text-sm">
                         <div>
-                          <span className="text-purple-400 font-medium">Extracted Text:</span>
-                          <p className="text-gray-300 mt-1 max-h-20 overflow-y-auto">
+                          <span className="text-[#9A4DFF] font-medium">Extracted Text:</span>
+                          <p className="text-[#FFFFFF] mt-1 max-h-20 overflow-y-auto">
                             {analysis.extractedText.substring(0, 200)}...
                           </p>
                         </div>
@@ -318,18 +318,18 @@ export function FileUpload({
 
                     {/* Problem Statement Detection */}
                     {(analysis.problemStatement || analysis.constraints || analysis.inputFormat) && (
-                      <div className="bg-gray-900 rounded p-3 border border-gray-600">
-                        <h4 className="text-sm font-medium text-green-400 mb-2">DSA Problem Detected!</h4>
+                      <div className="bg-[#0D0D0D] rounded p-3 border border-[#2E2E2E]">
+                        <h4 className="text-sm font-medium text-[#9A4DFF] mb-2">DSA Problem Detected!</h4>
                         {analysis.problemStatement && (
                           <div className="mb-2">
-                            <span className="text-xs text-gray-400">Problem:</span>
-                            <p className="text-sm text-gray-300">{analysis.problemStatement}</p>
+                            <span className="text-xs text-[#B3B3B3]">Problem:</span>
+                            <p className="text-sm text-[#FFFFFF]">{analysis.problemStatement}</p>
                           </div>
                         )}
                         {analysis.constraints && analysis.constraints.length > 0 && (
                           <div className="mb-2">
-                            <span className="text-xs text-gray-400">Constraints:</span>
-                            <ul className="text-sm text-gray-300 list-disc list-inside">
+                            <span className="text-xs text-[#B3B3B3]">Constraints:</span>
+                            <ul className="text-sm text-[#FFFFFF] list-disc list-inside">
                               {analysis.constraints.map((constraint, idx) => (
                                 <li key={idx}>{constraint}</li>
                               ))}
@@ -338,8 +338,8 @@ export function FileUpload({
                         )}
                         {analysis.inputFormat && (
                           <div>
-                            <span className="text-xs text-gray-400">Input Format:</span>
-                            <p className="text-sm text-gray-300">{analysis.inputFormat}</p>
+                            <span className="text-xs text-[#B3B3B3]">Input Format:</span>
+                            <p className="text-sm text-[#FFFFFF]">{analysis.inputFormat}</p>
                           </div>
                         )}
                       </div>
@@ -349,8 +349,8 @@ export function FileUpload({
 
                 {/* Loading State */}
                 {!analysis && isLoading && (
-                  <div className="flex items-center gap-2 text-sm text-gray-400">
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-400"></div>
+                  <div className="flex items-center gap-2 text-sm text-[#B3B3B3]">
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-[#9A4DFF]"></div>
                     Analyzing file...
                   </div>
                 )}
