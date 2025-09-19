@@ -3,16 +3,7 @@
 **_AI-powered career guidance for the next generation of learners & professionals_**
 
 <p align="center">
-  <!-- Animated heading (typing SVG) -->
-  <img src="https://readme-typing-svg.herokuapp.com?size=30&duration=3000&color=2F80ED&center=true&vCenter=true&width=900&lines=CodeX%C2%B3+%E2%80%93+AI-powered+Career+%26+Skills+Advisor;Personalized+Roadmaps+%7C+Skill+Profiling+%7C+Industry+Insights" alt="CodeX3 Banner"/>
-</p>
-
----
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Innovation-Hackathon%20Finalist-ff69b4?style=for-the-badge" alt="hackathon badge"/>
-  <img src="https://img.shields.io/badge/AI-Driven-blueviolet?style=for-the-badge" alt="ai badge"/>
-  <img src="https://img.shields.io/badge/Built%20With-React%20%7C%20Python%20%7C%20Docker-orange?style=for-the-badge" alt="built with"/>
+<img src="https://readme-typing-svg.herokuapp.com?size=30&duration=3000&color=2F80ED&center=true&vCenter=true&width=900&lines=CodeX%C2%B3+%E2%80%93+AI-powered+Career+%26+Skills+Advisor;Personalized+Roadmaps+%7C+Skill+Profiling+%7C+Industry+Insights" alt="CodeX3 Banner"/>
 </p>
 
 ---
@@ -56,7 +47,7 @@ AI enables *personalized, scalable, and up-to-date* guidance.
 ## 🛠️ Tech Stack
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=react,tailwind,nodejs,express,python,mongodb,firebase,docker,github" alt="tech icons"/>
+<img src="https://skillicons.dev/icons?i=react,tailwind,nodejs,express,python,mongodb,firebase,docker,github" alt="tech icons"/>
 </p>
 
 - **Frontend:** React.js + TailwindCSS  
@@ -77,9 +68,8 @@ flowchart TD
   D --> E[Curated Resources & Learning Path]
   E --> F[Progress Dashboard]
   F --> G[Feedback Loop & Continuous Guidance]
-<!-- NOTE: Mermaid block ends above. All images/HTML are below - KEEP THEM OUTSIDE MERMAID. --> <p align="center"> <!-- Professional architecture illustration (replace with your asset) --> <img src="https://github.com/nikitayk/assets/blob/main/architecture.svg" width="760" alt="Architecture illustration"/> </p>
-✨ Features (Animated Highlights)
-<p align="center"> <!-- Small animated typing emphasis --> <img src="https://readme-typing-svg.herokuapp.com?size=20&duration=2500&color=39FF14&center=true&vCenter=true&width=700&lines=Personalized+Roadmaps;Skill-gap+Analysis;Gamified+Progress;MOOC+Integrations" alt="features typing"/> </p>
+✨ Features
+<p align="center"> <img src="https://readme-typing-svg.herokuapp.com?size=20&duration=2500&color=39FF14&center=true&vCenter=true&width=700&lines=Personalized+Roadmaps;Skill-gap+Analysis;Gamified+Progress;MOOC+Integrations" alt="features typing"/> </p>
 ✅ Personalized, AI-generated career roadmap
 
 ✅ Skill-gap analysis & competency heatmaps
@@ -90,24 +80,6 @@ flowchart TD
 
 ✅ Real-time industry trend alerts & recommended micro-skills
 
-<p align="center"> <img src="https://github.com/nikitayk/assets/blob/main/features.svg" width="700" alt="Features overview"/> </p>
-📸 Screenshots / Demo (Replace with your uploads)
-Upload these images into /assets/ in your repo, then use these exact filenames for automatic rendering.
-
-Screen	Markdown
-Landing Page	![Landing Page](/assets/landing.png)
-Dashboard	![Dashboard](/assets/dashboard.png)
-Skill Gap Analysis	![Skill Gap](/assets/skillgap.png)
-Personalized Roadmap	![Roadmap](/assets/roadmap.png)
-
-Example (paste these into README where you want visuals):
-
-scss
-Copy code
-![Landing Page](/assets/landing.png)
-![Dashboard](/assets/dashboard.png)
-![Skill Gap Analysis](/assets/skillgap.png)
-![Personalized Roadmap](/assets/roadmap.png)
 🎯 Impact
 🌍 Students: Clear pathways and measurable growth
 
@@ -115,14 +87,12 @@ Copy code
 
 💼 Employers: Better-aligned, job-ready hires
 
-<p align="center"> <img src="https://github.com/nikitayk/assets/blob/main/impact.svg" width="650" alt="Impact"/> </p>
 👨‍👩‍👧 Team CodeX³
 Member	Role	Focus
 👩‍💻 Nikita Chaurasia	UI/UX Designer	Dashboards, Prototypes, Visuals
 👨‍💻 Ali Rizvi	Backend Developer	APIs, Security, Integrations
 👨‍💻 Raj Vardhan	AI + Architecture	ML Models, System Design
 
-<p align="center"> <img src="https://github.com/nikitayk/assets/blob/main/team.svg" width="700" alt="Team"/> </p>
 🚀 Roadmap / Future Scope
 🔗 LinkedIn & GitHub portfolio integration (live skill mapping)
 
@@ -132,7 +102,6 @@ Member	Role	Focus
 
 📱 Mobile app with offline microlearning
 
-<p align="center"> <img src="https://github.com/nikitayk/assets/blob/main/future.svg" width="600" alt="Future scope"/> </p>
 🏆 Why CodeX³ Will Win
 Solves a clear, high-impact problem
 
@@ -143,7 +112,7 @@ Scalable architecture for university & enterprise rollouts
 Polished demo-ready visuals + measurable outcomes
 
 🤝 Contributing
-Love contributions — fork, branch, PR. See CONTRIBUTING.md (create one) for style & checks.
+We welcome contributions — fork, branch, PR. See CONTRIBUTING.md (create one) for style & checks.
 
 📜 License
 Licensed under MIT License.
