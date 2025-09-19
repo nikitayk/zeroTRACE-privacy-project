@@ -1,31 +1,17 @@
-<h3 align="center"> ⚡ Built to leave <b><i>ZERO TRACE</i></b>. ⚡ </h3> ```
 # zeroTRACE — Privacy-First AI & DSA Problem Solver
 
-**A Hackathon Project | Built for the Future of Privacy and AI**
+**Hackathon Project | Built for the Future of Privacy and AI**
 
 ---
 
 ## 📖 Overview
 
 `zeroTRACE` is a **privacy-first AI extension and problem-solving platform**.  
-It is designed for developers, learners, and enterprises that want to leverage **AI problem-solving pipelines** without leaving a digital footprint.
+It empowers developers, learners, and enterprises to use **AI pipelines securely** with zero trace left behind.  
 
-This project combines:
-
-- A **zero-trace browser extension** ensuring user inputs are sanitized and never stored.  
-- A **DSA Solver Engine** that parses problems, selects algorithms, generates solutions, and produces test cases.  
-- A **modular backend + frontend architecture** that can be scaled for individuals, teams, and organizations.  
-
-It is more than a demo — it is a **deployable privacy-by-design product** built for hackathons, startups, and investors evaluating real-world impact.
-
----
-
-## 🔑 Why zeroTRACE?
-
-- **Privacy-first architecture** → data obfuscation, ephemeral sessions, and optional local inference.  
-- **Developer-first** → AI-powered DSA solver that accelerates learning and competitive programming.  
-- **Hackathon-ready polish** → clearly defined setup, reproducible pipeline, and immediate demo value.  
-- **Scalable vision** → from students to enterprises, ensuring secure, auditable AI interactions.  
+- **Zero-trace browsing extension** → secure, ephemeral sessions.  
+- **DSA Solver Engine** → parse problems, generate solutions, auto-create test cases.  
+- **Modular architecture** → scalable from student projects to enterprise use.  
 
 ---
 
@@ -41,29 +27,15 @@ It is more than a demo — it is a **deployable privacy-by-design product** buil
 
 ## ⚙️ Architecture
 
-```text
-               ┌────────────────────┐
-               │   Browser User      │
-               │ (zeroTRACE Ext.)    │
-               └─────────┬───────────┘
-                         │
-                         ▼
-                ┌──────────────────┐
-                │ Frontend: React   │
-                │ (future-GPT)      │
-                └─────────┬────────┘
-                          │
-                          ▼
-                ┌──────────────────┐
-                │ Backend: Node.js  │
-                │ (GPT-backend)     │
-                └─────────┬────────┘
-                          │
-          ┌───────────────┼─────────────────┐
-          ▼               ▼                 ▼
-   Privacy Layer   Model Orchestrator   DSA Solver Engine
-   (input/output   (routes to local or  (parse → algo → 
-   sanitization)   remote LLMs)         code → tests)
+```mermaid
+flowchart TD
+
+A[Browser User<br/>(zeroTRACE Extension)] --> B[Frontend: React<br/>(future-GPT)]
+B --> C[Backend: Node.js<br/>(GPT-backend)]
+
+C --> D[Privacy Layer<br/>(input/output sanitization)]
+C --> E[Model Orchestrator<br/>(routes to local/remote LLMs)]
+C --> F[DSA Solver Engine<br/>(parse → algo → code → tests)]
 🚀 Installation & Setup
 1. Clone repository
 bash
@@ -76,45 +48,41 @@ Copy code
 cd future-GPT
 npm install
 npm run dev
-# Runs at http://localhost:3000
+# → Runs at http://localhost:3000
 3. Backend (GPT-backend)
 bash
 Copy code
 cd ../GPT-backend
 npm install
 node server.js
-# Runs at http://localhost:8080
+# → Runs at http://localhost:8080
 4. Extension
 Open chrome://extensions
 
 Enable Developer Mode
 
-Click Load unpacked and select the /extension folder
+Click Load unpacked → select /extension folder
 
 🔬 Technical Pipelines
 Privacy Layer
 
-Sanitizes input and strips sensitive data.
+Sanitizes and obfuscates input.
 
-Default = no logging, no telemetry.
-
-Optional local caching for offline use.
+Default: no logging, no telemetry.
 
 Model Orchestrator
 
-Manages connections to LLM APIs or local models.
+Routes requests to local or external LLMs.
 
-Abstracted layer for portability across providers.
+Abstracted for portability across providers.
 
 DSA Solver Engine
 
 Parses problem statements.
 
-Selects optimal algorithms.
+Selects algorithms dynamically.
 
-Generates clean, executable code.
-
-Produces test cases for validation.
+Generates optimized code + test cases.
 
 👥 Team
 Nikita Chaurasia — UI/UX Design & Team Leader
@@ -123,14 +91,14 @@ Ali Razvi — Backend Engineering & Infrastructure
 
 Raj Vardhan — AI Architecture & Solver Logic
 
-🏆 Why It Wins Hackathons & Attracts Investors
-Clear value proposition → solves privacy + AI adoption challenge.
+🏆 Why It Wins
+Privacy-first design → zero-trace guarantee.
 
-Technical depth → modular architecture, security-first design.
+DSA solver automation → time-saving + educational.
 
-Scalable impact → from students to enterprises.
+Enterprise scalability → modular, secure architecture.
 
-Execution → polished product, not a prototype.
+Polish → product-level execution in a hackathon timeline.
 
 📜 License
-MIT License. Free for academic, research, and development use with attribution.
+MIT License. Free for academic, research, and dev
