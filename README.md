@@ -72,26 +72,22 @@
 
 ---
 
-## 📊 **System Architecture**  
+## 📊 System Architecture  
 
 ```mermaid
 flowchart TD
-  A[User Input] --> B[Skill Profiling Engine]
-  B --> C[Career Mapping]
+  A[User Input: Skills, Interests, Goals] --> B[Skill Profiling Engine]
+  B --> C[Career Mapping Module]
   C --> D[AI Recommendation Engine]
-  D --> E[Curated Learning Path]
-  E --> F[Dashboard]
-  F --> G[Feedback Loop]
+  D --> E[Curated Resources + Learning Path]
+  E --> F[Progress Dashboard]
+  F --> G[Feedback Loop & Continuous Guidance]
 <p align="center"> <img src="https://github.com/nikitayk/assets/blob/main/architecture.svg" width="750" alt="System Architecture" /> </p>
 ✨ Features
 ✅ Personalized career roadmap
-
 ✅ Skill-gap analysis dashboard
-
 ✅ Gamified progress tracking 🏆
-
 ✅ Real-time industry updates
-
 ✅ Integration with Coursera, edX, Udemy
 
 <p align="center"> <img src="https://github.com/nikitayk/assets/blob/main/features.svg" width="700" alt="Features Overview" /> </p>
@@ -99,11 +95,8 @@ flowchart TD
 👉 (Upload your screenshots in /assets/ folder and link here)
 
 📍 Landing Page
-
 📍 Career Recommendations Dashboard
-
 📍 Skill Gap Analysis
-
 📍 Personalized Roadmap
 
 🎯 Impact
@@ -121,15 +114,12 @@ Member	Role	Focus
 <p align="center"> <img src="https://github.com/nikitayk/assets/blob/main/team.svg" width="700" alt="Team Illustration" /> </p>
 🚀 Future Scope
 🔗 LinkedIn/GitHub API integration
-
 🗣️ AI-based mock interview coaching
-
 🌐 Multilingual support
-
 📱 Mobile App (iOS + Android)
 
 <p align="center"> <img src="https://github.com/nikitayk/assets/blob/main/future.svg" width="600" alt="Future Scope Illustration" /> </p>
 📜 License
 📝 Licensed under MIT License
 
-<p align="center"> <img src="https://readme-typing-svg.herokuapp.com?size=26&duration=4000&color=FF5733&center=true&vCenter=true&lines=✨+CodeX³+–+Building+AI+that+builds+careers+✨" /> </p> ```
+<p align="center"> <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&center=true&vCenter=true&random=false&width=600&lines=✨+CodeX³+–+Building+AI+that+builds+careers+✨" alt="Typing SVG" /> </p> ```
