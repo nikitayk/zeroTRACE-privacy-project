@@ -1,120 +1,86 @@
-# 🚀 CodeX³ – Personalized Career & Skills Advisor
 
-**_AI-powered career guidance for the next generation of learners & professionals_**
 
-<p align="center">
-<img src="https://readme-typing-svg.herokuapp.com?size=30&duration=3000&color=2F80ED&center=true&vCenter=true&width=900&lines=CodeX%C2%B3+%E2%80%93+AI-powered+Career+%26+Skills+Advisor;Personalized+Roadmaps+%7C+Skill+Profiling+%7C+Industry+Insights" alt="CodeX3 Banner"/>
-</p>
 
----
+🚀 <span style="font-size:2.5rem;">CodeX³ – Personalized Career & Skills Advisor</span>
+<p align="center"> <img src="https://readme-typing-svg.herokuapp.com?size=28&duration=4000&color=FF00FF&center=true&vCenter=true&multiline=true&width=800&height=120&lines=AI-powered+Career+%26+Skills+Advisor;Personalized+Guidance+for+Next-Gen+Learners;Future-ready+Mentorship+at+Scale" /> </p>
+<p align="center"> <img src="https://img.shields.io/github/stars/nikitayk/gen-ai?style=for-the-badge&logo=github&color=yellow" /> <img src="https://img.shields.io/github/forks/nikitayk/gen-ai?style=for-the-badge&logo=git&color=green" /> <img src="https://img.shields.io/github/license/nikitayk/gen-ai?style=for-the-badge&logo=open-source-initiative&color=blue" /> <img src="https://forthebadge.com/images/badges/built-with-love.svg" /> </p>
+🌟 Vision
+<p align="center"> <img src="https://readme-typing-svg.herokuapp.com?size=23&duration=3500&color=00C2FF&center=true&vCenter=true&lines=Discover+your+Career;Bridge+Skill+Gaps;Stay+Future+Ready" /> </p>
 
-## 🌟 Vision
+✨ CodeX³ = Your AI Mentor for Careers
 
-In today’s fast-paced world, students and professionals struggle to navigate career paths, skill gaps, and ever-evolving industry demands. **CodeX³** acts as an AI virtual mentor to:
+📌 Discover opportunities aligned with strengths
 
-- 📌 Discover career opportunities aligned with skills & interests  
-- 📌 Identify and bridge skill gaps through curated learning resources  
-- 📌 Track growth with personalized feedback & roadmaps  
-- 📌 Stay future-ready with real-time industry insights
+📌 Bridge gaps with curated resources
 
-**Mission:** *Democratize career guidance and make world-class mentorship accessible to everyone.*
+📌 Track growth via adaptive roadmaps
 
----
+📌 Stay future-ready with real-time insights
 
-## 🧩 Problem Statement
+🧩 Problem Statement
 
-> “Students often lack access to structured, personalized, and real-time career guidance, leading to uncertainty, underemployment, and skill mismatch.”
+🎬 Animation of challenge
 
-Traditional methods are:  
-- ❌ Generic and not adaptive  
-- ❌ Not scalable for large cohorts  
-- ❌ Often disconnected from industry demand
+<p align="center"> <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXl3bG9zcDZnMnd0ZnNtcjdjdXcxbHVmaWNraHFuZ2swZWh6NmF2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WoWm8YzFQJg5i/giphy.gif" width="400" /> </p>
 
-AI enables *personalized, scalable, and up-to-date* guidance.
+❌ Traditional counseling → generic, unscalable, outdated
+✅ AI-powered advisor → personalized, real-time, scalable
 
----
-
-## 💡 Our Solution — CodeX³
-
-- **Skill Profiling** — ML-based skill extraction & scoring  
-- **Career Mapping** — Match skills to roles & market demand  
-- **Learning Recommendations** — Curated MOOC + microlearning paths  
-- **Progress Tracking** — Dynamic dashboards, milestones & gamification  
-- **Industry Insights** — Trending skills, role requirements, job-skill gaps
-
----
-
-## 🛠️ Tech Stack
-
-<p align="center">
-<img src="https://skillicons.dev/icons?i=react,tailwind,nodejs,express,python,mongodb,firebase,docker,github" alt="tech icons"/>
-</p>
-
-- **Frontend:** React.js + TailwindCSS  
-- **Backend:** Node.js + Express.js  
-- **AI / ML:** Python, Scikit-learn, OpenAI APIs  
-- **DB:** MongoDB / Firebase  
-- **CI/CD:** Docker + GitHub Actions
-
----
-
-## 📊 System Architecture
-
-```mermaid
+💡 Our Solution – CodeX³
+<p align="center"> <img src="https://readme-typing-svg.herokuapp.com?size=23&duration=3000&color=FF7F50&center=true&vCenter=true&lines=Skill+Profiling;Career+Mapping;AI+Recommendations;Progress+Tracking;Industry+Insights" /> </p>
+🛠️ Tech Stack
+<p align="center"> <img src="https://skillicons.dev/icons?i=react,tailwind,nodejs,express,python,mongodb,firebase,docker,github" /> </p>
+Layer	Tools
+🎨 Frontend	React.js, TailwindCSS
+⚙️ Backend	Node.js, Express.js
+🤖 AI/ML	Python, Scikit-learn, OpenAI APIs
+🗄️ Database	MongoDB, Firebase
+🚀 Deployment	Docker, GitHub Actions (CI/CD)
+📊 System Architecture
 flowchart TD
-  A[User Input: Skills, Interests, Goals] --> B[Skill Profiling Engine]
-  B --> C[Career Mapping Module]
+  A[User Input] --> B[Skill Profiling Engine]
+  B --> C[Career Mapping]
   C --> D[AI Recommendation Engine]
-  D --> E[Curated Resources & Learning Path]
-  E --> F[Progress Dashboard]
-  F --> G[Feedback Loop & Continuous Guidance]
+  D --> E[Curated Resources]
+  E --> F[Dashboard]
+  F --> G[Feedback Loop]
+
+<p align="center"> <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGdrNzZjNml6bnh5d3I5ZTVzNDB0ZmVud2tkZjdhcWc1ZzdjbDZpYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mCRJDo24UvJMA/giphy.gif" width="500"/> </p>
 ✨ Features
-<p align="center"> <img src="https://readme-typing-svg.herokuapp.com?size=20&duration=2500&color=39FF14&center=true&vCenter=true&width=700&lines=Personalized+Roadmaps;Skill-gap+Analysis;Gamified+Progress;MOOC+Integrations" alt="features typing"/> </p>
-✅ Personalized, AI-generated career roadmap
+<p align="center"> <img src="https://readme-typing-svg.herokuapp.com?size=20&duration=2800&color=39FF14&center=true&vCenter=true&lines=Personalized+Career+Roadmaps;Gamified+Progress+Tracking;MOOC+Integrations;Real-time+Industry+Updates" /> </p>
 
-✅ Skill-gap analysis & competency heatmaps
-
-✅ Gamified progress tracking & milestones
-
-✅ Integration with Coursera, edX, Udemy (curated)
-
-✅ Real-time industry trend alerts & recommended micro-skills
+✅ Career roadmap (AI-generated)
+✅ Skill-gap analysis dashboard
+✅ Gamified motivation system 🎮
+✅ MOOC integrations (Coursera, edX, Udemy)
 
 🎯 Impact
-🌍 Students: Clear pathways and measurable growth
+<p align="center"> <img src="https://readme-typing-svg.herokuapp.com?size=22&duration=3000&color=F9A602&center=true&vCenter=true&lines=Students:+Clarity+%26+Confidence;Universities:+Scalable+Mentoring;Employers:+Industry-ready+Graduates" /> </p>
 
-🏫 Universities: Scalable mentorship & placement readiness
-
-💼 Employers: Better-aligned, job-ready hires
+🌍 Students → Get clear roadmaps
+🏫 Universities → Mentor at scale
+💼 Employers → Hire ready-to-contribute grads
 
 👨‍👩‍👧 Team CodeX³
+<p align="center"> <img src="https://readme-typing-svg.herokuapp.com?size=22&duration=3200&color=FF1493&center=true&vCenter=true&lines=Meet+the+Dream+Team" /> </p>
 Member	Role	Focus
-👩‍💻 Nikita Chaurasia	UI/UX Designer	Dashboards, Prototypes, Visuals
-👨‍💻 Ali Rizvi	Backend Developer	APIs, Security, Integrations
-👨‍💻 Raj Vardhan	AI + Architecture	ML Models, System Design
+👩‍💻 Nikita Chaurasia	UI/UX Designer	Dashboards + UX
+👨‍💻 Ali Rizvi	Backend Dev	APIs + Security
+👨‍💻 Raj Vardhan	AI + Architecture	ML Models + System Flow
+<p align="center"> <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjI1dmM3dmJrdThpZXdyYnU4azR0a3FuNmlwbDNpc2N5OTNua2ZjZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/coxQHKASG60HrHtvkt/giphy.gif" width="300"/> </p>
+🚀 Future Scope
+<p align="center"> <img src="https://readme-typing-svg.herokuapp.com?size=21&duration=2700&color=00CED1&center=true&vCenter=true&lines=LinkedIn+Integration;Mock+Interview+Coaching;Multilingual+Support;Mobile+App" /> </p>
 
-🚀 Roadmap / Future Scope
-🔗 LinkedIn & GitHub portfolio integration (live skill mapping)
+🔗 Live portfolio analysis
 
-🗣️ AI mock-interview coach with feedback scoring
+🗣️ AI mock interview prep
 
-🌐 Multilingual & region-specific career paths
+🌐 Global, multilingual rollout
 
-📱 Mobile app with offline microlearning
-
-🏆 Why CodeX³ Will Win
-Solves a clear, high-impact problem
-
-Uses AI + human-centered UX for adoption
-
-Scalable architecture for university & enterprise rollouts
-
-Polished demo-ready visuals + measurable outcomes
-
-🤝 Contributing
-We welcome contributions — fork, branch, PR. See CONTRIBUTING.md (create one) for style & checks.
+📱 Mobile app
 
 📜 License
-Licensed under MIT License.
 
-<p align="center"> <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&center=true&vCenter=true&width=600&lines=✨+CodeX%C2%B3+%E2%80%93+Building+AI+that+builds+careers+✨" alt="CodeX3 Footer"/> </p> ```
+📝 Licensed under MIT License
+
+<p align="center"> <img src="https://readme-typing-svg.herokuapp.com?size=22&duration=4000&color=FF4500&center=true&vCenter=true&lines=✨+CodeX³+–+Building+AI+that+builds+careers+✨" /> </p>
