@@ -1,215 +1,95 @@
-zeroTRACE — Privacy-First AI & DSA Problem Solver 🔐⚡
+<h1 align="center">
+⚡ zeroTRACE — <i>Privacy-First AI & DSA Problem Solver</i> 🔮
+</h1>
 
-Hackathon-ready • Privacy-first • Zero-Trace browsing + DSA problem solver
-A polished, production-minded extension and platform that blends privacy-by-design with a high-performance DSA/AI solver. Made to win judges’ hearts — crisp UX, auditable pipelines, and strict privacy defaults.
+<p align="center">
+  <img src="https://img.shields.io/badge/Privacy-First-black?style=for-the-badge&logo=hackaday" />
+  <img src="https://img.shields.io/badge/DSA-Solver-purple?style=for-the-badge&logo=codeforces" />
+  <img src="https://img.shields.io/badge/Hackathon-Winning-green?style=for-the-badge&logo=rocket" />
+</p>
 
-<!-- Badges (Shields) -->
+---
 
+## 🚀 <b><i>What is zeroTRACE?</i></b>
 
+**zeroTRACE** is a next-gen, privacy-driven AI extension + platform.  
+It combines a **<i>zero-footprint AI assistant</i>** with a **<i>powerful DSA problem solver</i>**, built for learners, devs, and hackathon warriors.  
 
+- 🕶️ **Privacy-first** → Zero data left behind.  
+- ⚡ **DSA Problem Crusher** → Paste a problem, pick difficulty, get instant code + tests.  
+- 💻 **Hackathon-ready** → 5-minute setup, blazing-fast demo.  
+- 🏆 **Why it wins?** → Privacy, polish, and pipelines that scream *future-tech*.  
 
+---
 
+## 🎨 <b><i>Visuals (Core Screens)</i></b>
 
-✨ Hero / Visuals
+<p align="center">
+  <img src="./WhatsApp Image 2025-09-19 at 14.11.53 (1).jpeg" width="280" style="border-radius:12px;box-shadow:0px 0px 20px #6f00ff;" />
+  <img src="./WhatsApp Image 2025-09-19 at 14.22.26.jpeg" width="280" style="border-radius:12px;box-shadow:0px 0px 20px #00ffe5;" />
+  <img src="./WhatsApp Image 2025-09-19 at 14.22.50.jpeg" width="280" style="border-radius:12px;box-shadow:0px 0px 20px #ff00aa;" />
+</p>
 
-A single glance should tell the whole story. Below are the three official project screenshots (only these three images are used, as requested). Place these images in the repo root with the exact filenames included below.
+---
 
-<table> <tr> <td><img src="./WhatsApp Image 2025-09-19 at 14.11.53 (1).jpeg" alt="zeroTRACE - Dashboard" width="360"/></td> <td><img src="./WhatsApp Image 2025-09-19 at 14.22.26.jpeg" alt="zeroTRACE - Welcome" width="360"/></td> <td><img src="./WhatsApp Image 2025-09-19 at 14.22.50.jpeg" alt="zeroTRACE - Problem Solver" width="360"/></td> </tr> </table>
-TL;DR — What is zeroTRACE?
+## 🧩 <b><i>Architecture — How It All Works</i></b>
 
-zeroTRACE is a privacy-first browser extension + web app designed for:
+[ Browser Extension ]
+⬇
+[ Frontend: future-GPT ] ←→ [ Backend: GPT-backend ]
+⬇ ⬇
+Privacy Layer Model Orchestrator
+⬇ ⬇
+User View ⇢ DSA Solver / AI Inference
 
-Secure, ephemeral AI assistance that leaves zero trace on servers or local history.
+yaml
+Copy code
 
-A DSA Problem Solver with code-generation and test scaffolding for competitive programming.
+- 🔒 **Privacy Layer** → Sanitizes + strips user data.  
+- 🧠 **AI Orchestrator** → Routes to chosen LLM (local/remote).  
+- 🏎️ **DSA Pipeline** → Problem → Algorithm Selector → Code → Testcases.  
 
-Usable offline-first patterns where possible and strict privacy defaults (no tracking, minimal telemetry, on-device caching only when permitted).
+---
 
-This project was built for a hackathon with the goal to showcase an end-to-end privacy-first AI experience for learners and competitive programmers.
+## 👩‍💻 <b><i>Contributors</i></b>
 
-Why it wins (judge-friendly bullets)
+- **Nikita Chaurasia** — *UI/UX Designer & Team Lead*  
+- **Ali Razvi** — *Backend Architect*  
+- **Raj Vardhan** — *AI Pipeline & Solver Logic*  
 
-Privacy-first architecture — minimal data flows, optional encryption, ephemeral contexts. Judges appreciate risk-aware designs.
+---
 
-Instant value for users — built-in DSA solver + test generation dramatically speeds up learning and interview prep.
+## ⚙️ <b><i>Setup & Run (Cyber Console Mode)</i></b>
 
-Polished UI/UX — professional dark aesthetic, intuitive workspace for both beginners and advanced users (see screenshots).
-
-Clear team roles + ownership — each core area assigned to specialists (see Contributors).
-
-Reproducible setup & CI-friendly — clear runbook for judges to try locally in <5 minutes.
-
-Features (short)
-
-Ephemeral session AI: model interactions do not persist unless explicitly saved.
-
-DSA Problem Solver: paste problems, select difficulty, generate code & tests.
-
-Browser extension for privacy-first sessions.
-
-Modular backend AI pipeline for custom LLMs / local inference.
-
-Fine-grained user controls for telemetry and local caching.
-
-Architecture Overview — High Level
-[Browser Extension] <---> [Frontend App: future-GPT] <---> [Backend: GPT-backend]
-       |                                         |
-       |-------- optional local cache ---------->|
-       |                                         |
-User Browser                                 AI Pipeline (server-side)
-                                              - Request Sanitizer
-                                              - Differential privacy layer (optional)
-                                              - Model orchestrator -> Private LLM / Engine
-                                              - Response sanitizer -> Frontend
-
-
-Key pipelines
-
-Inference pipeline: Input -> Sanitizer -> (Optional local obfuscation) -> Model Orchestrator -> Post-processor -> User
-
-DSA solver pipeline: Problem + constraints -> Problem Parser -> Algorithm Selector -> Code Generator -> Test Generator -> Run & Validate
-
-Privacy controls: Toggle telemetry, data retention, encryption on/off via UI.
-
-Tech Stack (core)
-
-Frontend: React (future-GPT folder) — modern componentized UI
-
-Backend: Node.js (GPT-backend folder) — express + orchestration
-
-AI: Adapter modules to local or remote LLMs, with safety hooks
-
-Other: npm/Yarn, manifest v3 (for extension), optional Docker for reproducibility
-
-Contributors
-
-Nikita Chaurasia — UI/UX Designer & Team Leader
-
-Ali Razvi — Backend Engineer (model orchestration, infra)
-
-Raj Vardhan — AI Architect (model design, solver logic)
-
-Installation & Quick Start (copy-paste)
-
-Important — I used the exact folder names you specified. If your folders are named differently update commands accordingly.
-
-Clone repo
-
+```bash
+# 1. Clone
 git clone https://github.com/nikitayk/zeroTRACE-privacy-project.git
 cd zeroTRACE-privacy-project
 
-
-Frontend (named future-GPT in repo)
-
-# install & run frontend
+# 2. Frontend (React)
 cd future-GPT
 npm install
-# dev mode
-npm run dev
-# or build for production
-npm run build
-# frontend will typically run on http://localhost:3000
+npm run dev   # 🔮 localhost:3000
 
-
-Backend (named GPT-backend in repo)
-
+# 3. Backend (Node.js)
 cd ../GPT-backend
 npm install
+node server.js   # ⚡ runs at localhost:8080
 
-# create .env (example)
-cat > .env <<EOF
-PORT=8080
-MODEL_ENDPOINT=<your-private-model-or-api>
-JWT_SECRET=<strong-secret>
-ALLOW_TELEMETRY=false
-EOF
+# 4. Load Extension
+chrome://extensions → Load unpacked → select /extension
+🔐 <b><i>Why Judges Will Love It</i></b>
+⚡ Instant demo — run in < 5 mins.
 
-# start backend
-node server.js
-# or for dev:
-npm run dev
+🔒 Privacy-by-design — opt-in telemetry only.
 
+🧠 Technical edge — modular pipelines + AI orchestration.
 
-Run the extension (if included)
+🎨 UI polish — looks like a final product, not a hack.
 
-Load the extension in Chrome/Edge via chrome://extensions → Load unpacked → point to /extension (or whichever folder contains the manifest).
+🏆 Hackathon winner material — team synergy + execution.
 
-Confirm extension permissions and privacy toggles.
+📜 <b><i>License</i></b>
+MIT — Free to use, fork, and remix.
 
-Environment variables & security notes
-
-Keep MODEL_ENDPOINT private. Prefer local LLMs or VPN'd endpoints for hackathon demos.
-
-ALLOW_TELEMETRY=false by default — explicitly opt-in for any telemetry.
-
-For production, always use HTTPS and enable server-side encryption-at-rest for saved user preferences.
-
-API / Endpoints (example)
-
-Basic endpoints implemented by GPT-backend:
-
-POST /api/v1/infer — send sanitized prompt → returns response
-
-POST /api/v1/dsa/solve — send problem text + language + difficulty → returns code, tests
-
-GET /api/v1/status — health & model status
-
-(See GPT-backend/routes for exact signatures and sample payloads.)
-
-Testing & Local validation
-
-Unit tests: cd GPT-backend && npm test
-
-Frontend tests: cd future-GPT && npm test
-
-DSA test harness: cd GPT-backend && npm run generate-tests (generates and runs sample test cases for the DSA solver)
-
-Demo / Judges PPT
-
-I have uploaded the presentation draft for judges; see the project PPT for the final pitch and slides: 
-
-final draft
-
-Security & Privacy Design (short)
-
-Data minimization: only required inputs are transmitted.
-
-Ephemeral sessions: default no persistence; users must opt-in to save sessions.
-
-Sanitization & obfuscation: user input goes through a sanitizer before any external calls.
-
-Local-first patterns: where possible compute results locally or using user-chosen model endpoints.
-
-How to evaluate during the demo
-
-Show privacy toggle: enable/disable telemetry — explain differences.
-
-Paste a DSA problem in the solver UI and generate code + tests (demonstrate Generate Tests).
-
-Open extension → start ephemeral session → show no stored logs (prove privacy).
-
-Walk judges through architecture diagram and call out security controls and model orchestration.
-
-Judging checklist (what to emphasize)
-
-Privacy by design — minimal data retention (✅)
-
-Technical complexity — on-device / pipeline orchestration (✅)
-
-Student value — DSA solver improves learning speed (✅)
-
-UX polish — screenshots + demo ready (✅)
-
-Team cohesion and role clarity (✅)
-
-License
-
-MIT — please attribute the team when using any code or assets.
-
-Contact & Next steps
-
-Repository owner: Nikita Chaurasia
-
-Backend: Ali Razvi
-
-AI Architecture: Raj Vardhan
+<p align="center"> <b><i>⚡ Built to leave ZERO TRACE. ⚡</i></b> </p> ```
