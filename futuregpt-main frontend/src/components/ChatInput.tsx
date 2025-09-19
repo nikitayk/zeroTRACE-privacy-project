@@ -148,7 +148,7 @@ export function ChatInput({
   const contextLength = (context?.webpageContent?.length || 0) + (context?.selectedText?.length || 0);
 
   return (
-    <div className="border-t border-[#2E2E2E] p-3 bg-[#0D0D0D] sticky bottom-0">
+    <div className="black-chat-container border-t border-[#2E2E2E] p-3 sticky bottom-0">
       {/* Context Display */}
       {hasContext && (
         <div className="mb-3">
@@ -187,14 +187,24 @@ export function ChatInput({
         <div className="relative">
           <button
             onClick={() => setShowModelSelect(!showModelSelect)}
-            className="flex items-center gap-2 px-3 py-1.5 bg-[#1A1A1A] border border-[#2E2E2E] rounded-lg text-sm text-[#B3B3B3] hover:bg-[#2B0F45] hover:text-[#FFFFFF] hover:border-[#9A4DFF] transition-colors"
+            className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm text-[#E5E5E5]"
+            style={{
+              background: 'rgba(26,26,26,0.6)',
+              backdropFilter: 'blur(16px)',
+              border: '1px solid rgba(255,255,255,0.10)'
+            }}
           >
             <span>{models.find(m => m.id === model)?.name}</span>
             <ChevronDown size={14} />
           </button>
           
           {showModelSelect && (
-            <div className="absolute bottom-full mb-2 left-0 bg-[#1A1A1A] border border-[#2E2E2E] rounded-lg shadow-xl z-10 min-w-48">
+            <div className="absolute bottom-full mb-2 left-0 rounded-lg shadow-xl z-10 min-w-48"
+              style={{
+                background: 'rgba(26,26,26,0.75)',
+                backdropFilter: 'blur(14px)',
+                border: '1px solid rgba(255,255,255,0.12)'
+              }}>
               {models.map((m) => (
                 <button
                   key={m.id}
@@ -238,10 +248,8 @@ export function ChatInput({
 
       {/* Input Area */}
       <div
-        className={`relative rounded-lg border transition-colors ${
-          dragOver
-            ? 'border-[#9A4DFF] bg-[#2B0F45]'
-            : 'border-[#2E2E2E] bg-[#1A1A1A]'
+        className={`black-chat-area relative rounded-lg transition-colors ${
+          dragOver ? 'border-[#9A4DFF]' : ''
         }`}
         onDrop={handleDrop}
         onDragOver={(e) => e.preventDefault()}
@@ -252,7 +260,7 @@ export function ChatInput({
           {/* File Upload */}
           <button
             onClick={() => fileInputRef.current?.click()}
-            className="p-2 text-[#B3B3B3] hover:text-[#FFFFFF] hover:bg-[#2B0F45] rounded-lg transition-colors"
+            className="icon-button p-2 text-[#B3B3B3] hover:text-[#FFFFFF] rounded-lg transition-colors"
             title="Upload file"
           >
             <Upload size={16} />
@@ -264,7 +272,7 @@ export function ChatInput({
             onChange={(e) => setInput(e.target.value)}
             onKeyPress={handleKeyPress}
             placeholder={`Ask anything... (${mode} mode)`}
-            className="flex-1 bg-transparent text-white placeholder-[#B3B3B3] resize-none max-h-32 min-h-[24px] focus:outline-none"
+            className="chat-textarea flex-1 bg-transparent text-white placeholder-[#B3B3B3] resize-none max-h-32 min-h-[24px] focus:outline-none"
             rows={1}
             style={{
               height: 'auto',
@@ -285,7 +293,7 @@ export function ChatInput({
               <button
                 onClick={handleWebSearch}
                 disabled={!canSend}
-                className="p-2 text-[#B3B3B3] hover:text-[#9A4DFF] hover:bg-[#2B0F45] rounded-lg transition-colors disabled:opacity-50 disabled:hover:text-[#B3B3B3] disabled:hover:bg-transparent"
+                className="icon-button p-2 text-[#B3B3B3] hover:text-[#9A4DFF] rounded-lg transition-colors disabled:opacity-50 disabled:hover:text-[#B3B3B3] disabled:hover:bg-transparent"
                 title="Web search"
               >
                 <Search size={16} />
@@ -296,7 +304,7 @@ export function ChatInput({
             <button
               onClick={handleFunctionCall}
               disabled={!canSend}
-              className="p-2 text-[#B3B3B3] hover:text-[#9A4DFF] hover:bg-[#2B0F45] rounded-lg transition-colors disabled:opacity-50 disabled:hover:text-[#B3B3B3] disabled:hover:bg-transparent"
+              className="icon-button p-2 text-[#B3B3B3] hover:text-[#9A4DFF] rounded-lg transition-colors disabled:opacity-50 disabled:hover:text-[#B3B3B3] disabled:hover:bg-transparent"
               title="Function call"
             >
               <Zap size={16} />
@@ -306,7 +314,7 @@ export function ChatInput({
               <button
                 onClick={onGenerateImage}
                 disabled={!canSend}
-                className="p-2 text-[#B3B3B3] hover:text-[#FFFFFF] hover:bg-[#2B0F45] rounded-lg transition-colors disabled:opacity-50 disabled:hover:text-[#B3B3B3] disabled:hover:bg-transparent"
+                className="icon-button p-2 text-[#B3B3B3] hover:text-[#FFFFFF] rounded-lg transition-colors disabled:opacity-50 disabled:hover:text-[#B3B3B3] disabled:hover:bg-transparent"
                 title="Generate image"
               >
                 <Image size={16} />
@@ -316,7 +324,7 @@ export function ChatInput({
             <button
               onClick={onSend}
               disabled={!canSend}
-              className="p-2 text-[#B3B3B3] hover:text-[#FFFFFF] hover:bg-[#2B0F45] rounded-lg transition-colors disabled:opacity-50 disabled:hover:text-[#B3B3B3] disabled:hover:bg-transparent"
+              className="icon-button p-2 text-[#B3B3B3] hover:text-[#FFFFFF] rounded-lg transition-colors disabled:opacity-50 disabled:hover:text-[#B3B3B3] disabled:hover:bg-transparent"
               title="Send message"
             >
               {isLoading ? (

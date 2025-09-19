@@ -1,11 +1,16 @@
 import { useState, useCallback, useEffect } from 'react';
 import { Sidebar } from './components/Sidebar';
+import './components/StudyDashboard.css';
+import StudyDashboard from './components/StudyDashboard';
+import './utils/dsaIntegration.js';
 import { Header } from './components/Header';
 import { WelcomeScreen } from './components/WelcomeScreen';
 import { MessageList } from './components/MessageList';
 import { ChatInput } from './components/ChatInput';
 import { DSASolver } from './components/DSASolver';
 import { Gamification } from './components/Gamification';
+import StudyPlan from './study/StudyPlan';
+import DomainSelector from './components/DomainSelector';
 import { useStorage } from './hooks/useStorage';
 import { useAI } from './hooks/useAI';
 import type { Message, AppMode, AIConfig, Context, DSAProblem } from './types';
@@ -130,12 +135,22 @@ function App() {
 
   const publishActivity = useCallback((type: string, payload?: any) => {
     try {
+      // Dispatch global event for live listeners
       window.dispatchEvent(new CustomEvent('zt-activity', { detail: { type, payload, ts: Date.now() } }));
+    } catch {}
+    try {
+      // Persist activity counters so Gamification can read them later even if not mounted
+      const key = 'zt_session_activity';
+      const raw = sessionStorage.getItem(key);
+      const data = raw ? JSON.parse(raw) : {};
+      const next = { ...data, [type]: (data?.[type] || 0) + 1 };
+      sessionStorage.setItem(key, JSON.stringify(next));
     } catch {}
   }, []);
 
-  const handleSend = useCallback(async () => {
-    if (!input.trim() || isLoading) return;
+  const handleSend = useCallback(async (text?: string) => {
+    const currentInput = typeof text === 'string' ? text : input;
+    if (!currentInput.trim() || isLoading) return;
 
     // Keywords that suggest a real-time/news/search query
     // You can expand this list as needed
@@ -151,24 +166,24 @@ function App() {
       'IPO', 'merger', 'acquisition', 'announcement', 'press release', 'recall',
       'outage', 'shutdown', 'service status', 'downtime', 'maintenance', 'incident'
     ];
-    const lowerInput = input.trim().toLowerCase();
+    const lowerInput = currentInput.trim().toLowerCase();
     const isSearchQuery = searchKeywords.some(keyword => lowerInput.includes(keyword));
 
     if (isSearchQuery) {
       // Use web search
       addMessage({
         role: 'user',
-        content: input,
+        content: currentInput,
       });
       try {
-        const searchResult = await webSearch(input.trim());
+        const searchResult = await webSearch(currentInput.trim());
         addMessage({
           role: 'assistant',
           content: searchResult,
           metadata: { model: 'web-search', source: 'search' },
         });
         setCredits(Math.max(0, credits - 2));
-        publishActivity('web_search', { query: input.trim() });
+        publishActivity('web_search', { query: currentInput.trim() });
       } catch (error) {
         addMessage({
           role: 'assistant',
@@ -186,11 +201,11 @@ function App() {
     // Add user message first
     const userMessage = addMessage({
       role: 'user',
-      content: input,
+      content: currentInput,
     });
 
     setInput('');
-    publishActivity('message_sent', { contentLength: input.length });
+    publishActivity('message_sent', { contentLength: currentInput.length });
 
     try {
       // Create assistant message for streaming
@@ -447,8 +462,45 @@ function App() {
     // setMessages([]);
   }, []);
 
+  // Listen for mode change events from components
+  useEffect(() => {
+    const handleModeSwitch = (event: CustomEvent) => {
+      const { mode } = event.detail;
+      if (mode && mode !== 'dsa') { // Convert 'dsa' to 'dsa-solver'
+        const newMode = mode === 'dsa' ? 'dsa-solver' : mode as AppMode;
+        setMode(newMode);
+      }
+    };
+
+    document.addEventListener('zeroTrace:switchMode', handleModeSwitch as EventListener);
+    
+    return () => {
+      document.removeEventListener('zeroTrace:switchMode', handleModeSwitch as EventListener);
+    };
+  }, []);
+
   // Render different content based on mode
   const renderMainContent = () => {
+    if (mode === 'study') {
+      return <StudyDashboard />;
+    }
+
+    if (mode === 'adaptive-learning') {
+      return (
+        <DomainSelector
+          onDomainSelect={(domainId) => {
+            console.log('Selected domain:', domainId);
+            // Here you can handle domain selection - switch to study mode or show domain-specific content
+            setMode('study');
+          }}
+          onBack={() => {
+            // Go back to chat mode
+            setMode('chat');
+          }}
+        />
+      );
+    }
+
     if (mode === 'dsa-solver') {
       return (
         <DSASolver
@@ -475,7 +527,10 @@ function App() {
     return (
       <>
         {messages.length === 0 ? (
-          <WelcomeScreen mode={mode} hasApiKey={true} />
+          <WelcomeScreen onExampleClick={(example) => {
+            setInput(example);
+            handleSend(example);
+          }} />
         ) : (
           <MessageList messages={messages} isLoading={isLoading} />
         )}
@@ -504,16 +559,36 @@ function App() {
   };
 
   return (
-    <div className="w-full h-[100vh] bg-[#0D0D0D] text-white flex flex-col border border-[#2E2E2E] shadow-2xl overflow-hidden">
+  <div className="w-full h-screen min-h-screen text-white flex flex-col" style={{height: '100vh', minHeight: '100vh', background: 'transparent', position: 'relative', overflow: 'hidden'}}>
+      {/* Full Application Video Background */}
+      <video
+        className="app-bg-video"
+        src="/background_video.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100vh',
+          objectFit: 'cover',
+          zIndex: 0,
+          pointerEvents: 'none'
+        }}
+      />
       {/* Header */}
       <Header mode={mode} model={selectedModel} credits={credits} />
-      
-      <div className="flex flex-1 min-h-0">
+
+      <div className="flex flex-1 min-h-0 overflow-hidden" style={{height: '100%', minHeight: '0'}}>
         {/* Main Content */}
-        <div className="flex-1 flex flex-col min-h-0 min-w-0">
+        <div className="flex-1 flex flex-col min-h-0 min-w-0 overflow-y-auto app-content-overlay" style={{height: '100%', minHeight: '0', position: 'relative', zIndex: 1}}>
           {renderMainContent()}
         </div>
-        
+
         {/* Sidebar */}
         <Sidebar
           mode={mode}

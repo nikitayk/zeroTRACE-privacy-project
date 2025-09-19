@@ -57,7 +57,17 @@ function getTodayKey() {
 
 export function Gamification() {
   // Activity counters (session-based)
-  const [activity, setActivity] = useState<Record<string, number>>(() => readSession('activity', {}));
+  const [activity, setActivity] = useState<Record<string, number>>(() => {
+    // Merge persisted activity if present
+    const persisted = (() => {
+      try {
+        const raw = sessionStorage.getItem('zt_session_activity');
+        return raw ? (JSON.parse(raw) as Record<string, number>) : {};
+      } catch { return {}; }
+    })();
+    const fromSession = readSession('activity', {});
+    return { ...fromSession, ...persisted };
+  });
 
   // Streak tracking (local, daily)
   const [streak, setStreak] = useState<number>(() => readLocal('streak_count', 0));
@@ -174,7 +184,7 @@ export function Gamification() {
   const dsaSolved = activity['dsa_solved'] || 0;
 
   return (
-    <div className="flex-1 overflow-y-auto no-scrollbar p-4 space-y-6 bg-[#0D0D0D]">
+    <div className="flex-1 overflow-y-auto no-scrollbar p-4 space-y-6" style={{background: 'transparent'}}>
       {/* Header */}
       <div className="flex items-center gap-2">
         <Trophy className="w-5 h-5 text-[#9A4DFF]" />

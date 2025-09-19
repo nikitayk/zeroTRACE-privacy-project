@@ -1,10 +1,8 @@
 import React from 'react';
-import { MessageCircle, Search, Code, Eye, Zap, Globe, Shield, Target, Users, TrendingUp } from 'lucide-react';
-import type { AppMode } from '../types';
+import { MessageCircle, Search, Code, Eye, Shield } from 'lucide-react';
 
 interface WelcomeScreenProps {
-  mode: AppMode;
-  hasApiKey: boolean;
+  onExampleClick: (example: string) => void;
 }
 
 const features = [
@@ -19,16 +17,6 @@ const features = [
     description: 'Search the web for current information when context is insufficient'
   },
   {
-    icon: Zap,
-    title: 'Function Calling',
-    description: 'Execute predefined functions like weather, bookmarks, and more'
-  },
-  {
-    icon: Shield,
-    title: 'Privacy-First',
-    description: 'All processing in-memory with zero data storage'
-  },
-  {
     icon: Code,
     title: 'Code Assistant',
     description: 'Get help with programming, debugging, and code explanations'
@@ -37,34 +25,6 @@ const features = [
     icon: Eye,
     title: 'Vision Analysis',
     description: 'Analyze images and extract information from visual content'
-  }
-];
-
-const competitiveFeatures = [
-  {
-    icon: Target,
-    title: 'DSA Problem Solver',
-    description: 'Solve complex algorithmic problems with optimal solutions'
-  },
-  {
-    icon: Code,
-    title: 'Multi-Language Support',
-    description: 'C++, Python, Java, JavaScript with competitive programming templates'
-  },
-  {
-    icon: TrendingUp,
-    title: 'Complexity Analysis',
-    description: 'Detailed time and space complexity analysis with optimizations'
-  },
-  {
-    icon: Zap,
-    title: 'Test Case Generation',
-    description: 'Generate comprehensive test cases for edge case coverage'
-  },
-  {
-    icon: Users,
-    title: 'Interview Prep',
-    description: 'Practice coding interviews with real-world problem scenarios'
   },
   {
     icon: Shield,
@@ -73,69 +33,52 @@ const competitiveFeatures = [
   }
 ];
 
-const modeDescriptions = {
-  chat: 'General conversation with context awareness',
-  research: 'Deep analysis with structured research capabilities',
-  code: 'Programming assistance with code generation and debugging',
-  vision: 'Image analysis and visual content understanding',
-  'dsa-solver': 'Solve complex DSA problems with optimal algorithms',
-  competitive: 'Competitive programming with advanced problem solving',
-  interview: 'Coding interview preparation and practice',
-  optimization: 'Code optimization and performance analysis'
-};
+// Imported types and constants
 
-const competitiveExamples = [
-  'Solve "Maximum Subarray Sum" with Kadane\'s Algorithm',
-  'Implement Binary Search with edge case handling',
-  'Dynamic Programming solution for "Longest Common Subsequence"',
-  'Graph algorithms: DFS, BFS, Dijkstra implementation',
-  'Advanced data structures: Trie, Segment Tree, Fenwick Tree'
-];
-
-export function WelcomeScreen({ mode, hasApiKey }: WelcomeScreenProps) {
-  const isCompetitiveMode = mode === 'dsa-solver' || mode === 'competitive' || mode === 'interview' || mode === 'optimization';
-  const currentFeatures = (isCompetitiveMode ? competitiveFeatures : features).slice(0, 4);
-  const currentExamples = (isCompetitiveMode ? competitiveExamples : [
+export function WelcomeScreen({ onExampleClick }: WelcomeScreenProps) {
+  const currentFeatures = features.slice(0, 4);
+  const examples = [
     "What's on this page?",
-    "Search latest AI news",
-    mode === 'code' ? "Write a React component" : null
-  ]).filter(Boolean).slice(0, 2);
+    "Help me study DSA",
+    "Explain time complexity",
+    "Create a study plan"
+  ];
 
   return (
-    <div className="flex-1 flex flex-col items-center justify-start p-3 text-center gap-3 bg-[#0D0D0D]">
+    <div className="flex-1 flex flex-col items-center justify-start p-3 text-center gap-3" style={{background: 'transparent'}}>
       {/* Logo and Title */}
       <div className="mb-2">
         <div className="w-10 h-10 bg-[#2B0F45] rounded-2xl flex items-center justify-center mb-2 mx-auto border border-[#9A4DFF]">
-          {isCompetitiveMode ? (
-            <Target size={20} className="text-[#9A4DFF]" />
-          ) : (
-            <MessageCircle size={20} className="text-[#9A4DFF]" />
-          )}
+          <MessageCircle size={20} className="text-[#9A4DFF]" />
         </div>
         <h1 className="text-lg font-bold text-white mb-1">
-          {isCompetitiveMode ? 'Ultimate DSA Solver' : 'zeroTrace AI'}
+          zeroTrace AI
         </h1>
         <p className="text-[#B3B3B3] text-xs">
-          {isCompetitiveMode ? 'World\'s Best Competitive Programming AI' : 'Privacy-First AI Assistant'}
+          Privacy-First AI Assistant
         </p>
       </div>
       
-      {/* Mode Description */}
+      {/* Welcome Message */}
       <div className="mb-2">
-        <div className="inline-flex items-center gap-2 px-2 py-0.5 bg-[#1A1A1A] border border-[#2E2E2E] rounded-full text-xs text-[#B3B3B3] mb-2">
-          {mode === 'chat' && <MessageCircle size={14} />}
-          {mode === 'research' && <Search size={14} />}
-          {mode === 'code' && <Code size={14} />}
-          {mode === 'vision' && <Eye size={14} />}
-          {mode === 'dsa-solver' && <Target size={14} />}
-          {mode === 'competitive' && <Zap size={14} />}
-          {mode === 'interview' && <Users size={14} />}
-          {mode === 'optimization' && <TrendingUp size={14} />}
-          <span className="capitalize">{mode.replace('-', ' ')} Mode</span>
-        </div>
-        <p className="text-[#B3B3B3] text-xs max-w-xs">
-          {modeDescriptions[mode]}
+        <h2 className="text-white text-lg mb-2">Welcome to zeroTrace AI</h2>
+        <p className="text-[#B3B3B3] text-sm max-w-xs mb-4">
+          Your personal AI assistant for learning and mastering Data Structures & Algorithms
         </p>
+        
+        {/* Example Prompts */}
+        <div className="flex flex-col gap-2">
+          <p className="text-[#B3B3B3] text-xs">Try these examples:</p>
+          {examples.map((example, i) => (
+            <button
+              key={i}
+              onClick={() => onExampleClick(example)}
+              className="text-[#9A4DFF] text-sm hover:text-[#B37FFF] transition-colors"
+            >
+              {example}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Compact Features Grid */}
@@ -143,7 +86,7 @@ export function WelcomeScreen({ mode, hasApiKey }: WelcomeScreenProps) {
         {currentFeatures.map((feature, index) => (
           <div
             key={index}
-            className="p-2 bg-[#1A1A1A] rounded-lg border border-[#2E2E2E]"
+            className="feature-card p-2 rounded-lg"
           >
             <feature.icon size={14} className="text-[#9A4DFF] mb-1 mx-auto" />
             <h3 className="text-[11px] font-medium text-white mb-0.5">{feature.title}</h3>

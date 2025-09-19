@@ -12,13 +12,26 @@ class Phase1Controller {
     const startTime = Date.now();
 
     try {
-      // Execute both models in parallel (AND Gate)
-      const [gpt4Analysis, claude4Analysis] = await Promise.all([
+      // Execute both models in parallel, but tolerate single-provider failures
+      const results = await Promise.allSettled([
         this.gpt4.analyzeProblem(problemDescription),
         this.claude4.analyzeProblem(problemDescription)
       ]);
 
-      // Merge and synthesize the analyses
+      const gpt4Ok = results[0].status === 'fulfilled';
+      const claudeOk = results[1].status === 'fulfilled';
+
+      if (!gpt4Ok && !claudeOk) {
+        const gpt4Err = results[0].status === 'rejected' ? results[0].reason?.message || String(results[0].reason) : 'unknown';
+        const claudeErr = results[1].status === 'rejected' ? results[1].reason?.message || String(results[1].reason) : 'unknown';
+        throw new Error(`Both analyses failed (GPT-4: ${gpt4Err}; Claude: ${claudeErr})`);
+      }
+
+      // Fallbacks: if only one provider succeeded, use it for all fields
+      const gpt4Analysis = gpt4Ok ? results[0].value : '';
+      const claude4Analysis = claudeOk ? results[1].value : '';
+
+      // Merge and synthesize the analyses (mergeAnalyses can handle empty strings)
       const mergedAnalysis = this.mergeAnalyses(gpt4Analysis, claude4Analysis);
 
       const executionTime = Date.now() - startTime;

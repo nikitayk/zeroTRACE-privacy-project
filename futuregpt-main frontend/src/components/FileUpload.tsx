@@ -190,7 +190,7 @@ export function FileUpload({
   const isPDF = (fileType: string) => fileType === 'application/pdf';
 
   return (
-    <div className="space-y-4 bg-[#0D0D0D]">
+    <div className="space-y-4" style={{background: 'transparent'}}>
       {/* Upload Area */}
       <div
         className={`border-2 border-dashed rounded-lg p-6 text-center transition-colors ${

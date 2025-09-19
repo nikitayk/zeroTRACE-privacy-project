@@ -4,7 +4,7 @@ class GeminiAdapter {
   constructor(apiKey) {
     this.apiKey = apiKey;
     this.baseURL = process.env.GEMINI_BASE_URL || 'https://api.a4f.co/v1';
-    this.modelId = process.env.GEMINI_MODEL || 'provider-6/gemini-2.5-flash-thinking';
+    this.modelId = process.env.GEMINI_MODEL || 'provider-3/gpt-4.1-nano';
   }
 
   async callAPI(prompt, temperature = 0.1, maxTokens = 2000) {

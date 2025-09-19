@@ -19,7 +19,7 @@ export function MessageList({ messages, isLoading }: MessageListProps) {
   };
 
   return (
-    <div className="flex-1 overflow-y-auto no-scrollbar p-3 space-y-3 bg-[#0D0D0D]">
+    <div className="flex-1 overflow-y-auto no-scrollbar p-3 space-y-3" style={{background: 'transparent'}}>
       {messages.map((message) => (
         <div
           key={message.id}
@@ -32,10 +32,8 @@ export function MessageList({ messages, isLoading }: MessageListProps) {
           )}
           
           <div
-            className={`max-w-[80%] rounded-lg p-3 group relative ${
-              message.role === 'user'
-                ? 'bg-[#1A1A1A] text-white rounded-br-none border border-[#2E2E2E]'
-                : 'bg-[#1A1A1A] text-[#FFFFFF] rounded-bl-none border border-[#2E2E2E]'
+            className={`max-w-[80%] rounded-lg p-3 group relative message-bubble ${
+              message.role === 'user' ? 'rounded-br-none' : 'rounded-bl-none'
             }`}
           >
             {message.type === 'image' && message.metadata?.imageUrl && (

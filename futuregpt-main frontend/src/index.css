@@ -1,3 +1,142 @@
+/* Full Application Video Background */
+.app-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 1;
+}
+
+/* Hide video controls */
+.app-bg-video::-webkit-media-controls {
+  display: none !important;
+}
+
+.app-bg-video::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+.app-bg-video::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+.app-bg-video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+
+/* Application content overlay for readability */
+.app-content-overlay {
+  background: transparent;
+}
+
+/* Ensure all content is above video */
+.app-content-overlay * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Enhanced readability for text over video */
+.app-content-overlay h1,
+.app-content-overlay h2,
+.app-content-overlay h3,
+.app-content-overlay p,
+.app-content-overlay span,
+.app-content-overlay div {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Glass buttons (opt-in) for video background */
+.app-content-overlay .glass-button {
+  background: transparent;
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.app-content-overlay .glass-button:hover {
+  background: rgba(26, 26, 26, 0.3);
+  backdrop-filter: blur(4px);
+  transform: translateY(-1px);
+}
+
+/* Card enhancements for video background */
+.app-content-overlay .card,
+.app-content-overlay [class*="card"] {
+  background: transparent;
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Input field enhancements */
+.app-content-overlay input,
+.app-content-overlay textarea {
+  background: rgba(26, 26, 26, 0.3);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Header overlay for video background */
+.app-header-overlay {
+  background: rgba(26, 26, 26, 0.5);
+  backdrop-filter: blur(22px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+/* Sidebar overlay for video background */
+.app-sidebar-overlay {
+  background: transparent;
+}
+
+/* Scrollbar styling for video background */
+.app-content-overlay::-webkit-scrollbar {
+  width: 8px;
+}
+
+.app-content-overlay::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.app-content-overlay::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.app-content-overlay::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Ensure video is always visible */
+.app-bg-video {
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* Force transparent backgrounds on all elements */
+* {
+  background-color: transparent !important;
+}
+
+/* Re-apply specific backgrounds only where needed */
+.app-content-overlay input,
+.app-content-overlay textarea,
+.app-content-overlay .card {
+  background: rgba(26, 26, 26, 0.3) !important;
+}
+
+/* Ensure generic buttons stay clean (no boxes) unless opted-in */
+.app-content-overlay button {
+  background: transparent !important;
+  border: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +152,7 @@ body {
   --zt-border: #2E2E2E; /* Borders */
   --zt-hover: #2B0F45; /* Hover/Highlight */
 
-  background-color: var(--zt-bg);
+  background-color: transparent;
   color: var(--zt-text);
   margin: 0;
   padding: 0;
@@ -31,7 +170,7 @@ html {
 }
 
 #root {
-  background-color: var(--zt-bg);
+  background-color: transparent;
   min-height: 100vh;
   height: 100vh;
   width: 100%;
@@ -74,4 +213,79 @@ html {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--zt-hover);
+}
+
+/* Black aesthetic for chatbox and sidebar icons */
+.black-chat-container {
+  background: rgba(26, 26, 26, 0.45) !important; /* lighter & more translucent */
+  backdrop-filter: blur(24px);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 -10px 32px rgba(0, 0, 0, 0.35);
+}
+
+.black-chat-area {
+  background: rgba(26, 26, 26, 0.35);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.icon-button {
+  background: transparent;
+  border: none;
+  transition: all .15s ease;
+}
+
+.icon-button:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Ensure global app overlay styles don't re-introduce borders on icon buttons */
+.app-content-overlay .icon-button {
+  background: transparent !important;
+  border: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+.app-content-overlay .icon-button:hover {
+  background: rgba(255,255,255,0.06) !important;
+}
+
+/* Plain textarea without inner borders */
+.chat-textarea {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.sidebar-container {
+  background: rgba(26,26,26,.45);
+  backdrop-filter: blur(16px);
+  box-shadow: 8px 0 24px rgba(0,0,0,.35);
+}
+
+.sidebar-icon {
+  background: rgba(26,26,26,.4);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.sidebar-icon.active {
+  background: rgba(42, 16, 77, 0.65);
+  border-color: #9A4DFF;
+  box-shadow: 0 0 0 2px rgba(154,77,255,.15), 0 0 18px rgba(154,77,255,.45);
+}
+
+/* Feature cards (welcome screen) - improved readability over background */
+.feature-card {
+  background: rgba(26, 26, 26, 0.38);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Chat message bubbles */
+.message-bubble {
+  background: rgba(26, 26, 26, 0.35);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }

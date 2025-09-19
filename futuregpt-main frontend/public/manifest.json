@@ -2,17 +2,22 @@
   "manifest_version": 3,
   "name": "zeroTrace - Privacy-First AI",
   "version": "1.0.0",
-  "description": "Your privacy-first AI companion. All data processed in-memory, leaving zero trace.",
+  "description": "Your privacy-first AI companion with adaptive learning. All data processed in-memory, leaving zero trace.",
   "permissions": [
     "storage",
     "activeTab",
     "scripting",
     "tabs",
-    "sidePanel"
+    "sidePanel",
+    "alarms",
+    "notifications"
   ],
   "host_permissions": [
     "http://localhost:3000/*",
     "https://api.chatanywhere.tech/*",
+    "https://api.openai.com/*",
+    "https://api.anthropic.com/*",
+    "https://generativelanguage.googleapis.com/*",
     "<all_urls>"
   ],
   "action": {
@@ -25,6 +30,18 @@
     "default_path": "index.html"
   },
   "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'"
-  }
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/*",
+        "src/study/*",
+        "src/adaptive_learning/*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
 }

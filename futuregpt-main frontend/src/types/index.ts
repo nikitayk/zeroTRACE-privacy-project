@@ -66,7 +66,7 @@ export interface AIConfig {
   maxTokens: number;
 }
 
-export type AppMode = 'chat' | 'research' | 'code' | 'vision' | 'dsa-solver' | 'competitive' | 'interview' | 'optimization' | 'gamification';
+export type AppMode = 'chat' | 'research' | 'code' | 'vision' | 'dsa-solver' | 'gamification' | 'study' | 'adaptive-learning';
 
 export interface AppState {
   mode: AppMode;

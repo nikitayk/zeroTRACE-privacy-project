@@ -8,16 +8,15 @@ interface HeaderProps {
   credits: number;
 }
 
-const modeDescriptions = {
+const modeDescriptions: Record<AppMode, string> = {
   chat: 'Chat with AI',
   research: 'Deep Research',
   code: 'Code Assistant',
   vision: 'Vision Analysis',
   'dsa-solver': 'DSA Problem Solver',
-  competitive: 'Competitive Programming',
-  interview: 'Interview Prep',
-  optimization: 'Code Optimization',
   gamification: 'Gamification',
+  study: 'Study Plan',
+  'adaptive-learning': 'Adaptive Learning'
 };
 
 export function Header({ mode, model, credits }: HeaderProps) {
@@ -42,7 +41,7 @@ export function Header({ mode, model, credits }: HeaderProps) {
   }, []);
 
   return (
-    <div className="h-12 bg-[#0D0D0D] border-b border-[#2E2E2E] px-3 flex items-center justify-between">
+    <div className="h-12 px-3 flex items-center justify-between app-header-overlay" style={{position: 'relative', zIndex: 2}}>
       <div className="flex items-center gap-2">
         <Logo size="sm" />
         <div>

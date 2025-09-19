@@ -1,0 +1,72 @@
+
+
+/* Video Background Styling for Sidebar */
+.sidebar-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Ensure video loads and plays properly */
+.sidebar-bg-video::-webkit-media-controls {
+  display: none !important;
+}
+
+.sidebar-bg-video::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+.sidebar-bg-video::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+.sidebar-bg-video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+
+/* Sidebar content overlay */
+.sidebar-content {
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.1); /* Very light overlay to maintain readability */
+  border-radius: 8px 0 0 8px; /* Rounded left corners */
+}
+
+/* Enhanced button styling for better visibility over video */
+.sidebar-content button {
+  background: rgba(26, 26, 26, 0.5); /* More transparent background */
+  backdrop-filter: blur(2px); /* Subtle glass effect */
+  transition: all 0.3s ease;
+}
+
+.sidebar-content button:hover {
+  background: rgba(106, 13, 173, 0.8); /* Purple hover with transparency */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(154, 77, 255, 0.3);
+}
+
+.sidebar-content button.active {
+  background: rgba(154, 77, 255, 0.9);
+  box-shadow: 0 0 20px rgba(154, 77, 255, 0.4);
+}
+
+/* Divider styling */
+.sidebar-content .divider {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px);
+}
+
+/* Fallback for when video fails to load */
+.sidebar-bg-video:not([src]) {
+  background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #2B0F45 100%);
+}
+
+/* Loading state for video */
+.sidebar-bg-video[poster] {
+  background: #0D0D0D;
+}

@@ -27,31 +27,31 @@ module.exports = {
   models: {
     gpt4: {
       baseURL: process.env.GPT4_BASE_URL || 'https://api.a4f.co/v1',
-      model: process.env.GPT4_MODEL || 'provider-6/gpt-4.1',
+      model: process.env.GPT4_MODEL || 'provider-6/mistral-nemo-12b-instruct',
       maxTokens: 2000,
       temperature: 0.1
     },
     claude4: {
       baseURL: process.env.CLAUDE4_BASE_URL || 'https://api.a4f.co/v1',
-      model: process.env.CLAUDE4_MODEL || 'provider-6/r1-1776',
+      model: process.env.CLAUDE4_MODEL || 'provider-3/llama-3.3-70b',
       maxTokens: 2000,
       temperature: 0.1
     },
     gemini: {
       baseURL: process.env.GEMINI_BASE_URL || 'https://api.a4f.co/v1',
-      model: process.env.GEMINI_MODEL || 'provider-6/gemini-2.5-flash-thinking',
+  model: process.env.GEMINI_MODEL || 'provider-3/gpt-4.1-nano',
       maxTokens: 2000,
       temperature: 0.1
     },
     deepseek: {
-      baseURL: process.env.DEEPSEEK_BASE_URL || 'https://openrouter.ai/api/v1',
-      model: process.env.DEEPSEEK_MODEL || 'deepseek/deepseek-r1-0528:free',
+      baseURL: process.env.DEEPSEEK_BASE_URL || 'https://api.a4f.co/v1',
+      model: process.env.DEEPSEEK_MODEL || 'provider-1/deepseek-v3.1',
       maxTokens: 2000,
       temperature: 0.1
     },
     gpt4o: {
       baseURL: process.env.GPT4O_BASE_URL || 'https://api.a4f.co/v1',
-      model: process.env.GPT4O_MODEL || 'provider-6/gpt-4.1-mini',
+      model: process.env.GPT4O_MODEL || 'provider-3/gpt-5-nano',
       maxTokens: 2000,
       temperature: 0.1
     }

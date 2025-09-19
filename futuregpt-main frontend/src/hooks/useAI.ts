@@ -400,17 +400,33 @@ public:
       }
 
       const result = await response.json();
-      
+
       // Handle enhanced pipeline response
-      if (result.success && result.solution) {
+      if (result?.success && result?.solution) {
         return {
           ...result.solution,
           metadata: result.metadata,
           phases: result.phases
         };
-      } else {
-        throw new Error(result.errorDetails?.message || 'DSA problem solving failed');
       }
+
+      // Graceful fallback: surface best-known details instead of throwing
+      const fallbackExplanation = result?.errorDetails?.message || 'All pipeline phases failed to find a solution.';
+      const metadata = result?.metadata || undefined;
+      const phases = result?.phases || [];
+      const partialCode = result?.solution?.code || '// No solution produced by the pipeline. Please refine the problem statement or try again.';
+
+      return {
+        code: partialCode,
+        language,
+        timeComplexity: result?.solution?.timeComplexity || 'N/A',
+        spaceComplexity: result?.solution?.spaceComplexity || 'N/A',
+        approach: result?.solution?.approach || 'N/A',
+        explanation: fallbackExplanation,
+        testCases: result?.solution?.testCases || [],
+        ...(metadata ? { metadata } : {}),
+        ...(phases ? { phases } as any : {})
+      };
     } finally {
       setIsLoading(false);
     }

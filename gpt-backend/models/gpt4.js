@@ -4,7 +4,7 @@ class GPT4Adapter {
   constructor(apiKey) {
     this.apiKey = apiKey;
     this.baseURL = process.env.GPT4_BASE_URL || 'https://api.a4f.co/v1';
-    this.modelId = process.env.GPT4_MODEL || 'provider-6/gpt-4.1';
+    this.modelId = process.env.GPT4_MODEL || 'provider-6/mistral-nemo-12b-instruct';
   }
 
   async callAPI(messages, temperature = 0.1, maxTokens = 2000) {

@@ -4,7 +4,7 @@ class Claude4Adapter {
   constructor(apiKey) {
     this.apiKey = apiKey;
     this.baseURL = process.env.CLAUDE4_BASE_URL || 'https://api.a4f.co/v1';
-    this.modelId = process.env.CLAUDE4_MODEL || 'provider-6/r1-1776';
+    this.modelId = process.env.CLAUDE4_MODEL || 'provider-3/llama-3.3-70b';
   }
 
   async callAPI(messages, temperature = 0.1, maxTokens = 2000) {

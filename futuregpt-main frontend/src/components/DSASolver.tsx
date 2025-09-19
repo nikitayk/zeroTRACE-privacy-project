@@ -112,7 +112,7 @@ export function DSASolver({ onSolve, onAnalyzeComplexity, onGenerateTestCases, o
   };
 
   return (
-    <div className="space-y-6 p-4 bg-[#0D0D0D]">
+    <div className="space-y-6 p-4" style={{background: 'transparent'}}>
       {/* Header */}
       <div className="flex items-center space-x-2 text-[#9A4DFF]">
         <Target className="w-5 h-5" />

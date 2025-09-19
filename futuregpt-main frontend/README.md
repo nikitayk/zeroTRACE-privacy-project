@@ -1,8 +1,8 @@
-# 🚀 Ultimate Competitive Programming AI Extension
+# 🚀 zeroTrace AI - Privacy-First AI Assistant
 
-**World's Best DSA Problem Solver & Competitive Programming Assistant**
+**Advanced AI-powered Chrome Extension with DSA Problem Solving & Multi-Modal Intelligence**
 
-A Chrome extension that transforms into the ultimate competitive programming and DSA problem-solving tool. Solve the hardest algorithmic problems with AI-powered assistance, complexity analysis, and multi-language support.
+A Chrome extension that provides privacy-first AI assistance with context awareness, DSA problem solving, and multi-modal capabilities. Transform your browsing experience with intelligent AI that understands your context and helps you solve complex problems.
 
 ## ✨ Features
 
@@ -13,18 +13,20 @@ A Chrome extension that transforms into the ultimate competitive programming and
 - **Test Case Generation**: Comprehensive test cases for edge case coverage
 - **Approach Explanation**: Step-by-step algorithm explanations
 
-### 🏆 **Competitive Programming Modes**
+### 🧠 **AI Modes**
+- **Chat**: General conversation with context awareness
+- **Research**: Deep analysis with structured research capabilities
+- **Code**: Programming assistance with code generation and debugging
+- **Vision**: Image analysis and visual content understanding
 - **DSA Solver**: Specialized for algorithmic problem solving
-- **Competitive**: Advanced competitive programming features
-- **Interview Prep**: Coding interview practice and preparation
-- **Optimization**: Code performance analysis and optimization
+- **Gamification**: Track your progress and achievements
 
 ### 🔧 **Advanced Features**
-- **Real-time Code Execution**: Test your solutions instantly
-- **Complexity Visualization**: Visual representation of algorithm efficiency
-- **Edge Case Detection**: Automatic identification of corner cases
-- **Performance Profiling**: Detailed performance analysis
-- **Multi-language Templates**: Pre-built competitive programming templates
+- **Context Awareness**: Analyzes webpage content and selected text
+- **Real-time Web Search**: Search the web for current information
+- **Code Assistant**: Get help with programming, debugging, and explanations
+- **Vision Analysis**: Analyze images and extract information
+- **Privacy-First**: All processing in-memory with zero data storage
 
 ## 🚀 Quick Start
 
@@ -76,26 +78,22 @@ AI Response:
 - Test cases and explanations
 ```
 
-### Complexity Analysis
+### Context-Aware Chat
 ```
-Input: Your algorithm code
-Output:
-- Time Complexity: O(n log n)
-- Space Complexity: O(n)
-- Detailed explanation
-- Optimization suggestions
-- Edge case considerations
+Input: "What's on this page?"
+AI Response: Analyzes current webpage content and provides relevant insights
 ```
 
-### Test Case Generation
+### Code Assistance
 ```
-Input: Problem description
-Output:
-- Normal test cases
-- Edge cases (empty input, single element)
-- Boundary conditions
-- Stress test cases
-- Corner cases
+Input: "Help me debug this React component"
+AI Response: Analyzes your code and provides debugging suggestions
+```
+
+### Vision Analysis
+```
+Input: Upload an image
+AI Response: Extracts text, identifies objects, and analyzes visual content
 ```
 
 ## 🛠️ Backend API Endpoints
@@ -146,13 +144,13 @@ POST /generate-testcases
 - **Test Cases**: Input/output pairs with descriptions
 - **Complexity Analysis**: Time/space complexity breakdown
 
-### Enhanced Sidebar
-- **Mode Switching**: Chat, Research, Code, Vision, DSA Solver, Competitive, Interview, Optimization
+### Streamlined Sidebar
+- **Mode Switching**: Chat, Research, Code, Vision, DSA Solver, Gamification
 - **Quick Actions**: New chat, settings, mode-specific features
 
 ### Welcome Screen
+- **Clean Interface**: General AI features and capabilities
 - **Mode-specific Content**: Different features and examples for each mode
-- **Competitive Programming**: DSA-focused examples and features
 
 ## 🔧 Configuration
 
@@ -172,7 +170,7 @@ VITE_API_URL=http://localhost:3000
 - **Java**: Efficient data structures, StringBuilder for strings
 - **JavaScript**: Modern ES6+ features, efficient array methods
 
-## 🏆 Competitive Programming Features
+## 🏆 DSA Problem Solving Features
 
 ### Algorithm Categories
 - **Binary Search**: Variations and applications
@@ -199,17 +197,24 @@ VITE_API_URL=http://localhost:3000
 
 ## 🚀 Performance Features
 
-### Optimization Techniques
-- **Algorithm Optimization**: Best practices for competitive programming
-- **Memory Management**: Efficient memory usage patterns
-- **Time Complexity**: Optimal algorithm selection
-- **Space Complexity**: Minimal memory footprint
+### AI Model Integration
+- **Multi-Model Pipeline**: GPT-4, Claude, Gemini, DeepSeek integration
+- **Sequential Processing**: Multi-phase problem solving approach
+- **Graceful Degradation**: Continues working even if some models fail
+- **Error Handling**: Robust error handling with fallback solutions
 
 ### Real-time Features
-- **Live Code Execution**: Instant feedback on solutions
-- **Complexity Visualization**: Real-time complexity analysis
-- **Performance Profiling**: Detailed performance metrics
-- **Edge Case Detection**: Automatic corner case identification
+- **Live Context Analysis**: Real-time webpage content analysis
+- **Instant AI Responses**: Quick and accurate AI assistance
+- **Multi-modal Support**: Text, code, and image processing
+- **Context Awareness**: Understands your current browsing context
+
+## 🎮 Gamification
+
+- **Progress Tracking**: Monitor your AI usage and DSA solving progress
+- **Achievements**: Unlock achievements for different activities
+- **Streaks**: Track your daily activity streaks
+- **Session Analytics**: View detailed session statistics
 
 ## 🤝 Contributing
 
@@ -225,24 +230,24 @@ MIT License - see LICENSE file for details
 
 ## 🎯 Roadmap
 
-### Phase 1: Core DSA Solver ✅
-- [x] Multi-language support
-- [x] Complexity analysis
-- [x] Test case generation
-- [x] Basic UI components
+### Phase 1: Core Features ✅
+- [x] Multi-modal AI assistance
+- [x] DSA problem solving
+- [x] Context awareness
+- [x] Privacy-first design
 
 ### Phase 2: Advanced Features 🚧
-- [ ] Real-time code execution
-- [ ] Performance profiling
+- [x] Multi-model AI pipeline
+- [x] Gamification system
+- [x] Error handling and fallbacks
 - [ ] Advanced algorithm visualization
-- [ ] Contest mode
 
 ### Phase 3: Community Features 📋
 - [ ] Problem sharing
 - [ ] Solution comparison
-- [ ] Leaderboards
 - [ ] Collaborative solving
+- [ ] Extension marketplace
 
 ---
 
-**Transform your Chrome extension into the world's best competitive programming AI assistant!** 🚀 
+**Transform your Chrome extension into a privacy-first AI assistant with powerful DSA solving capabilities!** 🚀 

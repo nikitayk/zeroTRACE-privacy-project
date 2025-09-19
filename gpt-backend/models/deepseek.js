@@ -3,8 +3,8 @@ const axios = require('axios');
 class DeepSeekAdapter {
   constructor(apiKey) {
     this.apiKey = apiKey;
-    this.baseURL = process.env.DEEPSEEK_BASE_URL || 'https://openrouter.ai/api/v1';
-    this.modelId = process.env.DEEPSEEK_MODEL || 'deepseek/deepseek-r1-0528:free';
+    this.baseURL = process.env.DEEPSEEK_BASE_URL || 'https://api.a4f.co/v1';
+    this.modelId = process.env.DEEPSEEK_MODEL || 'provider-1/deepseek-v3.1';
   }
 
   async callAPI(messages, temperature = 0.1, maxTokens = 2000) {
