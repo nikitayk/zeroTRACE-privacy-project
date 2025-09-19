@@ -1,95 +1,103 @@
 <h1 align="center">
-⚡ zeroTRACE — <i>Privacy-First AI & DSA Problem Solver</i> 🔮
+✨⚡ <b><i>zeroTRACE</i></b> ⚡✨  
+<sub><i>Privacy-First AI & DSA Problem Solver</i></sub>
 </h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Privacy-First-black?style=for-the-badge&logo=hackaday" />
   <img src="https://img.shields.io/badge/DSA-Solver-purple?style=for-the-badge&logo=codeforces" />
-  <img src="https://img.shields.io/badge/Hackathon-Winning-green?style=for-the-badge&logo=rocket" />
+  <img src="https://img.shields.io/badge/Hackathon-Ready-green?style=for-the-badge&logo=rocket" />
 </p>
 
 ---
 
-## 🚀 <b><i>What is zeroTRACE?</i></b>
+## 🌌 <b><i>About zeroTRACE</i></b>
 
-**zeroTRACE** is a next-gen, privacy-driven AI extension + platform.  
-It combines a **<i>zero-footprint AI assistant</i>** with a **<i>powerful DSA problem solver</i>**, built for learners, devs, and hackathon warriors.  
+**zeroTRACE** is a futuristic extension + platform that blends **privacy-first browsing** with an **AI-powered DSA solver**.  
+It’s not just another project — it’s a **hackathon winner in the making**.  
 
-- 🕶️ **Privacy-first** → Zero data left behind.  
-- ⚡ **DSA Problem Crusher** → Paste a problem, pick difficulty, get instant code + tests.  
-- 💻 **Hackathon-ready** → 5-minute setup, blazing-fast demo.  
-- 🏆 **Why it wins?** → Privacy, polish, and pipelines that scream *future-tech*.  
+🔒 **Zero Trace** → No footprint, no leaks.  
+⚡ **DSA Crusher** → From problem → code → test cases in seconds.  
+🖥️ **Polished UX** → Judges feel like they’re using a real product.  
+🚀 **Hackathon-Ready** → Setup in under 5 minutes.  
 
 ---
 
-## 🎨 <b><i>Visuals (Core Screens)</i></b>
+## 🎨 <b><i>Visual Showcase</i></b>
 
 <p align="center">
-  <img src="./WhatsApp Image 2025-09-19 at 14.11.53 (1).jpeg" width="280" style="border-radius:12px;box-shadow:0px 0px 20px #6f00ff;" />
-  <img src="./WhatsApp Image 2025-09-19 at 14.22.26.jpeg" width="280" style="border-radius:12px;box-shadow:0px 0px 20px #00ffe5;" />
-  <img src="./WhatsApp Image 2025-09-19 at 14.22.50.jpeg" width="280" style="border-radius:12px;box-shadow:0px 0px 20px #ff00aa;" />
+  <img src="./WhatsApp Image 2025-09-19 at 14.11.53 (1).jpeg" width="280" style="border-radius:16px;box-shadow:0px 0px 15px #8a2be2;" />
+  <img src="./WhatsApp Image 2025-09-19 at 14.22.26.jpeg" width="280" style="border-radius:16px;box-shadow:0px 0px 15px #00ced1;" />
+  <img src="./WhatsApp Image 2025-09-19 at 14.22.50.jpeg" width="280" style="border-radius:16px;box-shadow:0px 0px 15px #ff1493;" />
 </p>
+
+<p align="center"><i>🔮 Sleek. Minimal. Privacy-first. 🔮</i></p>
 
 ---
 
-## 🧩 <b><i>Architecture — How It All Works</i></b>
+## 🧩 <b><i>Architecture</i></b>
 
-[ Browser Extension ]
-⬇
-[ Frontend: future-GPT ] ←→ [ Backend: GPT-backend ]
-⬇ ⬇
-Privacy Layer Model Orchestrator
-⬇ ⬇
-User View ⇢ DSA Solver / AI Inference
+┌────────────────┐ ┌──────────────────┐
+│ Browser │ <─────▶ │ Frontend: future │
+│ Extension │ │ GPT (React) │
+└────────────────┘ └─────────┬────────┘
+│
+▼
+┌───────────────┐
+│ Backend: GPT- │
+│ backend (Node)│
+└───────┬───────┘
+│
+┌───────────────────────────────┴───────────────────────────────┐
+│ Privacy Layer → AI Orchestrator → DSA Solver → User Output │
+└───────────────────────────────────────────────────────────────┘
 
 yaml
 Copy code
 
-- 🔒 **Privacy Layer** → Sanitizes + strips user data.  
-- 🧠 **AI Orchestrator** → Routes to chosen LLM (local/remote).  
-- 🏎️ **DSA Pipeline** → Problem → Algorithm Selector → Code → Testcases.  
+---
+
+## 👥 <b><i>Team</i></b>
+
+- 🎨 **Nikita Chaurasia** — *UI/UX Designer & Team Leader*  
+- 🛠️ **Ali Razvi** — *Backend Engineer*  
+- 🧠 **Raj Vardhan** — *AI Architect & Solver Logic*  
 
 ---
 
-## 👩‍💻 <b><i>Contributors</i></b>
-
-- **Nikita Chaurasia** — *UI/UX Designer & Team Lead*  
-- **Ali Razvi** — *Backend Architect*  
-- **Raj Vardhan** — *AI Pipeline & Solver Logic*  
-
----
-
-## ⚙️ <b><i>Setup & Run (Cyber Console Mode)</i></b>
+## ⚙️ <b><i>Setup & Run</i></b>
 
 ```bash
-# 1. Clone
+# 1. Clone the repository
 git clone https://github.com/nikitayk/zeroTRACE-privacy-project.git
 cd zeroTRACE-privacy-project
 
-# 2. Frontend (React)
+# 2. Frontend (future-GPT)
 cd future-GPT
 npm install
-npm run dev   # 🔮 localhost:3000
+npm run dev      # 🌐 Runs at http://localhost:3000
 
-# 3. Backend (Node.js)
+# 3. Backend (GPT-backend)
 cd ../GPT-backend
 npm install
-node server.js   # ⚡ runs at localhost:8080
+node server.js   # ⚡ Runs at http://localhost:8080
 
-# 4. Load Extension
+# 4. Extension
 chrome://extensions → Load unpacked → select /extension
-🔐 <b><i>Why Judges Will Love It</i></b>
-⚡ Instant demo — run in < 5 mins.
+🏆 <b><i>Why It Wins</i></b>
+✔ Privacy-first design — Data obfuscation + ephemeral sessions.
+✔ DSA pipeline — Problem parsing → Algo selection → Code → Auto tests.
+✔ Judge-friendly UX — No setup pain, instant wow factor.
+✔ Hackathon polish — Architecture diagrams, pipelines, roles clear.
 
-🔒 Privacy-by-design — opt-in telemetry only.
+🔐 <b><i>Security Highlights</i></b>
+Data minimization → only required input sent.
 
-🧠 Technical edge — modular pipelines + AI orchestration.
+Ephemeral sessions → no persistence by default.
 
-🎨 UI polish — looks like a final product, not a hack.
-
-🏆 Hackathon winner material — team synergy + execution.
+Local-first → Compute results on user’s machine where possible.
 
 📜 <b><i>License</i></b>
-MIT — Free to use, fork, and remix.
+MIT — Free to use, fork, and remix with attribution.
 
-<p align="center"> <b><i>⚡ Built to leave ZERO TRACE. ⚡</i></b> </p> ```
+<h3 align="center"> ⚡ Built to leave <b><i>ZERO TRACE</i></b>. ⚡ </h3> ```
