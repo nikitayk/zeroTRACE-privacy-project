@@ -9,6 +9,12 @@
 
 **Advanced AI-powered Chrome Extension with Sequential AI Pipeline & Multi-Modal Intelligence**
 
+
+<!-- Add your images here -->
+![Image 1](./WhatsApp%20Image%202025-09-21%20at%2014.50.58.jpeg)
+![Image 2](./WhatsApp%20Image%202025-09-21%20at%2014.50.59.jpeg)
+![Image 3](./WhatsApp%20Image%202025-09-21%20at%2014.56.22.jpeg)
+
 [![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-yellow?style=flat-square&logo=google-chrome)](https://chrome.google.com/webstore)
 [![React](https://img.shields.io/badge/React-18.3.1-blue?style=flat-square&logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
