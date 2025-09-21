@@ -500,8 +500,8 @@ POST /web-search
 <br/>
 <em>Team Lead & UI/UX</em>
 <br/>
-<a href="https://github.com/nikita-chaurasi">GitHub</a> | 
-<a href="https://linkedin.com/in/nikita-chaurasi">LinkedIn</a>
+<a href="https://github.com/nikitayk">GitHub</a> | 
+<a href="https://www.linkedin.com/in/nikita-chaurasia-b82910288/">LinkedIn</a>
 </td>
 <td align="center">
 <img src="https://via.placeholder.com/100x100/6A0DAD/FFFFFF?text=A" width="100" height="100" style="border-radius: 50%;"/>
@@ -510,8 +510,8 @@ POST /web-search
 <br/>
 <em>Backend Manager</em>
 <br/>
-<a href="https://github.com/ali-rizvi">GitHub</a> | 
-<a href="https://linkedin.com/in/ali-rizvi">LinkedIn</a>
+<a href="https://github.com/alirizzzv">GitHub</a> | 
+<a href="https://www.linkedin.com/in/ali-rizvi-4628ab286/">LinkedIn</a>
 </td>
 <td align="center">
 <img src="https://via.placeholder.com/100x100/2B0F45/FFFFFF?text=R" width="100" height="100" style="border-radius: 50%;"/>
@@ -521,7 +521,7 @@ POST /web-search
 <em>AI & Architecture</em>
 <br/>
 <a href="https://github.com/raj-vardhan">GitHub</a> | 
-<a href="https://linkedin.com/in/raj-vardhan">LinkedIn</a>
+<a href="https://www.linkedin.com/in/rajvardhankumar/">LinkedIn</a>
 </td>
 </tr>
 </table>
