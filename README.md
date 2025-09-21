@@ -494,7 +494,7 @@ POST /web-search
 <table>
 <tr>
 <td align="center">
-<img src="https://via.placeholder.com/100x100/9A4DFF/FFFFFF?text=N" width="100" height="100" style="border-radius: 50%;"/>
+
 <br/>
 <strong>Nikita Chaurasi</strong>
 <br/>
