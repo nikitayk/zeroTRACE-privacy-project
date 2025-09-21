@@ -504,7 +504,7 @@ POST /web-search
 <a href="https://www.linkedin.com/in/nikita-chaurasia-b82910288/">LinkedIn</a>
 </td>
 <td align="center">
-<img src="https://via.placeholder.com/100x100/6A0DAD/FFFFFF?text=A" width="100" height="100" style="border-radius: 50%;"/>
+
 <br/>
 <strong>Ali Rizvi</strong>
 <br/>
@@ -514,7 +514,7 @@ POST /web-search
 <a href="https://www.linkedin.com/in/ali-rizvi-4628ab286/">LinkedIn</a>
 </td>
 <td align="center">
-<img src="https://via.placeholder.com/100x100/2B0F45/FFFFFF?text=R" width="100" height="100" style="border-radius: 50%;"/>
+
 <br/>
 <strong>Raj Vardhan</strong>
 <br/>
