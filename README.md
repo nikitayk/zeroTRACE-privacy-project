@@ -520,7 +520,7 @@ POST /web-search
 <br/>
 <em>AI & Architecture</em>
 <br/>
-<a href="https://github.com/raj-vardhan">GitHub</a> | 
+<a href="https://github.com/NoobVenom">GitHub</a> | 
 <a href="https://www.linkedin.com/in/rajvardhankumar/">LinkedIn</a>
 </td>
 </tr>
